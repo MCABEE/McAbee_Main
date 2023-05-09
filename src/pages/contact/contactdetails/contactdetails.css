@@ -1,0 +1,20 @@
+.contact-page-details-content h4 {
+  font-weight: 700;
+}
+.contact-page-details-content a{
+    color: black;
+}
+.contact-page-detail-table {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .contact-page-detail-table {
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .contact-page-detail-table {
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+.joinus{
+    text-align: center;
+    .joinuscards{
+        
+        gap: 2rem;
+        padding: 0 3rem;
+        text-align: left;
+        div{
+            padding: 1.5rem;
+            border-radius: 1rem;
+            p{
+                font-size: 0.8rem;
+            }
+        }
+        .div1{
+            background: linear-gradient(to right,rgba(255,255,255),#469ad8);
+        }
+        .div2{
+            background: linear-gradient(to right,#489bd7,#93ca7d);
+        }
+        .div3{
+            background: linear-gradient(to right,#93ca7d,#fff);
+        }
+    }
+    .aboutusarrow{
+        width: 8rem;
+        margin: 1rem auto;
+        img{
+            width: 100%;
+        }
+    }
+    button{
+        border-radius: 1rem;
+        padding: 0.5rem 2rem;
+    }
+}

@@ -1,0 +1,50 @@
+.navigation {
+  padding: 0 100px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.menubtn {
+  border: none;
+  border-radius: 50%;
+  background-color: #99ccff;
+  width: 30px;
+  padding: 7px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation-item {
+  padding: 1.3em;
+}
+
+.navigationbar,
+.navigationbar a {
+  color: white;
+  letter-spacing: 0.1em;
+}
+.navigationbar,
+.navigationbar a:hover {
+  color: #99ccff;
+}
+.mobile-menu-open {
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 0;
+  }
+
+  .navigation-link {
+    padding: 0;
+    padding-left: 25px;
+  }
+  .navigationbar,
+  .navigationbar a {
+    color: #2f6091;
+  }
+}

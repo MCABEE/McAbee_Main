@@ -1,0 +1,59 @@
+.footer-container {
+  padding: 0 100px;
+}
+.footericontab {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+}
+.footerTab{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footerIconDiv {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #666666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+}
+@media (max-width: 992px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
+  .footericontab {
+    width: 100%;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
+  .footerTab{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+  .footericontab {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
+  .footericontab {
+    width: 100%;
+    align-items: center;
+  }
+  
+}
