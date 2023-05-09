@@ -12,7 +12,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/scss/navigation';
 
-import "./productcarousel.scss";
+import "./productCarousel.scss";
 
 import firstlook from "../../../assets/homeassets/firstlookproductimg.png"
 import firstlooklogo from "../../../assets/homeassets/Layer-12.png"

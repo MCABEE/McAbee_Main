@@ -16,7 +16,7 @@ export const Navbar = () => {
     <div className='navigation'>
       <nav className={navbarClass}>
         <div className="container-fluid">
-          <Link className="navbar-brand fw-700" to="/contact">MCABEE</Link>
+          <Link className="navbar-brand fw-700" to="/">MCABEE</Link>
           <button className="navbar-toggler menubtn" onClick={toggleMobileMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <RiMenu3Fill />
           </button>
@@ -38,7 +38,7 @@ export const Navbar = () => {
                 <Link className="nav-link navigation-link" to="/careers">Careers</Link>
               </li>
               <li className="nav-item navigation-item">
-                <Link className="nav-link navigation-link" to="/">Contact</Link>
+                <Link className="nav-link navigation-link" to="/contact">Contact</Link>
               </li>
             </ul>
           </div>

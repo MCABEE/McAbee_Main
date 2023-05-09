@@ -2,6 +2,7 @@ import React from 'react'
 import "./aboutus.scss"
 import { ServiceCards } from './servicecards/ServiceCards'
 import { Joinus } from './joinus/Joinus'
+import aboutusimg from "../../../assets/aboutus.png"
 
 export const AboutUs = () => {
     return (
@@ -27,7 +28,7 @@ export const AboutUs = () => {
             </div>
             <div className='d-flex align-items-center flex-column flex-lg-row gap-2'>
                 <div className='aboutusimg col col-lg-6'>
-                    <img src="src\assets\aboutus.png" />
+                    <img src={aboutusimg} />
                 </div>
                 <div className='aboutusimgcontent border '>
                     <p className='text-muted'>WHO WE ARE</p>
