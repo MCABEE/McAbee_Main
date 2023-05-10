@@ -2,15 +2,17 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
 import { FaGooglePlay } from "react-icons/fa"
 import { BsApple } from "react-icons/bs"
 
 // Import Swiper styles
-import "swiper/css";
+import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import 'swiper/scss/navigation';
+import 'swiper/scss/autoplay';
+
 
 import "./productCarousel.scss";
 
@@ -20,7 +22,6 @@ import notepad from "../../../assets/homeassets/pcNoteImg.png"
 import notepadlogo from "../../../assets/homeassets/Layer-49.png"
 import quick from "../../../assets/homeassets/Quickproductimg.png"
 import quicklogo from "../../../assets/homeassets/Layer-24.png"
-
 
 
 const productcardDetails = [
@@ -72,17 +73,42 @@ const productcardDetails = [
         "link": ""
 
     },
+    {
+        "image": firstlook,
+        "logo": firstlooklogo,
+        "title": "FIRSTLOOK",
+        "content": "India's first social Network to find life partners, it was the first of its kind globally.",
+        "link": ""
+
+    },
+    {
+        "image": notepad,
+        "logo": notepadlogo,
+        "title": "NotePad",
+        "content": "A personal note, also with diary with essential features we need regular use.",
+        "link": ""
+
+    },
+    {
+        "image": quick,
+        "logo": quicklogo,
+        "title": "Quick Search",
+        "content": "One of the best local search engine and business listing for products and services.",
+        "link": ""
+
+    },
 ]
 
 export default function ProductCarousel() {
+    
     return (
         <div >
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, Autoplay]}
                 navigation
-                autoplay={{ delay: 1000 }}
+                autoplay={{ delay: 3000,disableOnInteraction: false }}
                 loop={true}
                 breakpoints={{
                     // when window width is <= 640px
@@ -101,11 +127,11 @@ export default function ProductCarousel() {
             >
                 {
                     productcardDetails?.map((item, index) => {
-                        return (<SwiperSlide>
+                        return (<SwiperSlide key={index}>
                             <div className="carouselcard col col-lg-8 border">
                                 {/* main image */}
                                 <div>
-                                    <img src={item.image} alt="" />
+                                    <img src={item.image} className="swiper-lazy" alt="" />
                                 </div>
                                 {/* details card */}
                                 <div className=" card-body p-3">
@@ -118,12 +144,12 @@ export default function ProductCarousel() {
                                         </div>
                                         <p className="producttext text-secondary pt-2">{item.content}</p>
 
-                                        <div className=" position-absolute bottom-0 pb-3" style={{width:"80%"}}>
+                                        <div className=" position-absolute bottom-0 pb-3" style={{ width: "80%" }}>
                                             <div className="d-flex justify-content-between">
                                                 <a className="text-muted fs-6 pc-learnmore" >Learn More</a>
                                                 <div className="d-flex gap-3">
-                                                    <BsApple className="pc-bs-apple" size={20}/>
-                                                    <FaGooglePlay className="pc-googleplay" size={20}/>
+                                                    <BsApple className="pc-bs-apple" size={20} />
+                                                    <FaGooglePlay className="pc-googleplay" size={20} />
                                                 </div>
                                             </div>
                                         </div>

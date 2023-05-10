@@ -14,7 +14,7 @@ export const Navbar = () => {
           </div>
           <div className=''>
             <input type="checkbox" id="check" />
-            <label for="check">
+            <label htmlFor="check">
               <RiMenu3Fill color={"#8dcff4"} size={25} />
             </label>
 
