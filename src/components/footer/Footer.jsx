@@ -5,8 +5,8 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa
 
 export const Footer = () => {
     return (
-        <div className="container-fluid footer-container" style={{ borderTop: "1px dashed black" }}>
-            <footer className="pt-4">
+        <div className="container-fluid footer-container mt-5 pt-5" style={{ borderTop: "1px dashed black" }}>
+            <footer >
                 <div className="footerTab">
                     <FooterTabs data={["Company", "About", "Careers", "Products", "Services"]} />
                     <FooterTabs data={["Products", "Firstlook", "Notepad", "Search Engine", "View all"]} />
@@ -14,7 +14,7 @@ export const Footer = () => {
                     <FooterTabs data={["Support", "Business Consulting", "HR Support", "Product Related", "General Queries"]} />
 
                     <div className='footericontab'>
-                        <h5 className='fw-bold fs-6 text-end text-muted pb-2'>Follow us on</h5>
+                        <h5 className='fw-bold fs-6 text-end text-muted'>Follow us on</h5>
                         <div className='d-flex gap-2'>
                             <a className='footerIconDiv' href='https://www.facebook.com/'><FaFacebookF color='white' size="1.2rem" /></a>
                             <a className='footerIconDiv' href='https://www.linkedin.com/'><FaLinkedinIn color='white' size="1.2rem" /></a>

@@ -5,7 +5,7 @@ import "./servicecards.scss"
 export const ServiceCards = () => {
 
     return (
-        <div className='servicecard d-flex flex-column flex-lg-row justify-content-evenly'>
+        <div className='servicecard d-flex flex-column flex-lg-row justify-content-evenly mt-5'>
             <div className='servicecard1 '>
                 <p className='fs-6 fw-700'>Explore Products, <br /> Endless Possiblities ...</p>
                 <p>We are working to introduce some amazing products with great features to the market by adding some innovative elements in areas where there is a need for innovation and great business potential.</p>

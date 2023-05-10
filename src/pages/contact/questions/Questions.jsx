@@ -4,7 +4,7 @@ import "./question.css"
 export const Questions = () => {
     return (
         <>
-            <h4 className='text-center fs-2 py-1'>Questions ?</h4>
+            <h4 className='text-center fs-2 mt-5'>Questions ?</h4>
             <p className='text-center '>We are happy to respond, just shoot your Q's..</p>
             {/* Accordian menu starts here */}
             <div className="accordion accordion-flush" id="accordionFlushExample">

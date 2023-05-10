@@ -22,8 +22,9 @@ export const Home = () => {
       <Navbar />
       <HeroSection data={herosectionData} />
       <div>
-        <p className='text-center pt-5 pb-4'>You can check out some of our amazing products here. Experience the difference from the similar one's!</p>
+        <p className='text-center py-5 m-0 px-2'>You can check out some of our amazing products here. Experience the difference from the similar one's!</p>
         <div className='col-9 col-lg-10 mx-auto'><ProductCarousel /></div>
+        <div className='pt-5 text-center'><a href="#" className='btn btn-outline-secondary '>View all products</a></div>
         
       </div>
       <AboutUs />
