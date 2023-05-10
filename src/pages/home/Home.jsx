@@ -10,7 +10,7 @@ import  ProductCarousel  from './productCarousel/ProductCarousel'
 
 
 let herosectionData = {
-  "image": false,
+  "image": true,
   "topic": "Think Different Make Difference!",
   "content": "A pure play internet company have multiple products in various sectors.",
   "button": "Learn More"

@@ -13,8 +13,8 @@ export const Footer = () => {
                     <FooterTabs data={["Services", "Product Design", "Mobile Application", "Web Application", "More"]} />
                     <FooterTabs data={["Support", "Business Consulting", "HR Support", "Product Related", "General Queries"]} />
 
-                    <div className='footericontab'>
-                        <h5 className='fw-bold fs-6 text-end text-muted'>Follow us on</h5>
+                    <div className='footericontab pt-3'>
+                        <h5 className='fw-bold fs-6 text-end  text-muted'>Follow us on</h5>
                         <div className='d-flex gap-2'>
                             <a className='footerIconDiv' href='https://www.facebook.com/'><FaFacebookF color='white' size="1.2rem" /></a>
                             <a className='footerIconDiv' href='https://www.linkedin.com/'><FaLinkedinIn color='white' size="1.2rem" /></a>

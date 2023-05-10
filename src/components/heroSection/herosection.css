@@ -7,63 +7,57 @@
       rgba(0, 0, 0, 0.85)
     ),
     url("../../assets/banner_Image.jpg");
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
 }
-.hero-section h3{
+.hero-section h3 {
   font-size: 2.8em;
   letter-spacing: 0.05em;
-  max-width:400px ;
+  max-width: 400px;
   line-height: 1.5em;
 }
-.hero-section p{
-  
+.hero-section p {
   letter-spacing: 0.05em;
- 
 }
 .hero-section-content {
   position: absolute;
-  top: 60%;
-  left:30%;
-  transform: translate(-50%,-50%);
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%);
   padding-left: 8.5em;
 }
-.GoogleMapIconContainer{
+.GoogleMapIconContainer {
   padding-left: 10em;
 }
-.heroSectionbtn{
-  border: none;
-  padding: 0.5rem 2rem;
+.heroSectionbtn {
+  background-color: #0dcaf0;
+  padding: 0.6rem 2rem;
   border-radius: 2rem;
+  color: #fff;
 }
-
+.heroSectionbtn:hover {
+  cursor: pointer;
+  background-color: #fff ;
+  color: gray !important;
+}
 
 @media (max-width: 768px) {
   .hero-section-content {
     padding: 50px;
   }
-  
 }
 
 @media (max-width: 576px) {
   .hero-section-content {
-    
-    position: absolute;
-  top: 60%;
-  left:0%;
-  transform: translateY(-50%);
-  padding-left: 0;
-  padding: 25px;
+    left: 0%;
+    transform: translateY(-50%);
+    padding-left: 0;
+    padding: 25px;
   }
-  .hero-section h3{
-    
-  
-    max-width:80% ;
-   
+  .hero-section h3 {
+    max-width: 80%;
   }
-  .GoogleMapIconContainer{
+  .GoogleMapIconContainer {
     display: none;
   }
-  
 }
-

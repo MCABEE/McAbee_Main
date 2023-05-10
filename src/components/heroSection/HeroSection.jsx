@@ -3,7 +3,7 @@ import "./herosection.css"
 import { GoogleMapIcon } from '../../assets/GoogleMapIcon';
 
 export const HeroSection = ({ data }) => {
-  const { image, topic, content,button } = data
+  const { image, topic, content, button } = data
   return (
     <div className='hero-section'>
       <div className='hero-section-content text-white'>
@@ -16,11 +16,11 @@ export const HeroSection = ({ data }) => {
         }
 
         <h3>{topic}</h3>
-        <p>{content}</p>
+        <p className='pb-4'>{content}</p>
         {
-          button &&   <button className='heroSectionbtn'>{button}</button>
+          button && <a className='heroSectionbtn' href='#'>{button}</a>
         }
-      
+
       </div>
     </div>
   )
