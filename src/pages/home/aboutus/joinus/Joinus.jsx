@@ -1,5 +1,6 @@
 import React from 'react'
 import "./joinus.scss"
+import aboutusarowpng from "../../../../assets/aboutusarrow.png"
 
 export const Joinus = () => {
     return (
@@ -24,7 +25,7 @@ export const Joinus = () => {
                 </div>
             </div>
             <div className='aboutusarrow'>
-                <img src="src\assets\aboutusarrow.png" alt="" />
+                <img src={aboutusarowpng} alt="" />
             </div>
             <button className='btn btn-outline-secondary'>Search and Apply</button>
 
