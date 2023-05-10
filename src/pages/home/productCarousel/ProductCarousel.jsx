@@ -79,13 +79,21 @@ export default function ProductCarousel() {
         <div >
             <Swiper
                 slidesPerView={1}
-                spaceBetween={10}
+                spaceBetween={30}
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 navigation
+                autoplay={{ delay: 1000 }}
                 loop={true}
                 breakpoints={{
                     // when window width is <= 640px
-                    640: {
+                    490: {
+                        slidesPerView: 1.5,
+
+                    },
+                    576: {
+                        slidesPerView: 2.5,
+                    },
+                    992: {
                         slidesPerView: 3.5,
 
                     }
@@ -100,20 +108,26 @@ export default function ProductCarousel() {
                                     <img src={item.image} alt="" />
                                 </div>
                                 {/* details card */}
-                                <div className="p-3">
-                                    <div className="d-flex align-items-end ">
-                                        <div className="productLogo">
-                                            <img src={item.logo} alt="" />
+                                <div className=" card-body p-3">
+                                    <div className="d-flex flex-column">
+                                        <div className="d-flex align-items-end ">
+                                            <div className="productLogo">
+                                                <img src={item.logo} alt="" />
+                                            </div>
+                                            <h6 className="ps-2  ">{item.title}</h6>
                                         </div>
-                                        <h6 className="ps-2  ">{item.title}</h6>
-                                    </div>
-                                    <p className="producttext text-secondary pt-2">{item.content}</p>
-                                    <div className="d-flex justify-content-between">
-                                        <a className="text-muted fs-6">Learn More</a>
-                                        <div className="d-flex gap-2">
-                                            <BsApple />
-                                            <FaGooglePlay />
+                                        <p className="producttext text-secondary pt-2">{item.content}</p>
+
+                                        <div className=" position-absolute bottom-0 pb-3" style={{width:"80%"}}>
+                                            <div className="d-flex justify-content-between">
+                                                <a className="text-muted fs-6 pc-learnmore" >Learn More</a>
+                                                <div className="d-flex gap-3">
+                                                    <BsApple className="pc-bs-apple" size={20}/>
+                                                    <FaGooglePlay className="pc-googleplay" size={20}/>
+                                                </div>
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

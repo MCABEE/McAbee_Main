@@ -1,4 +1,5 @@
 import React from 'react'
+import "./question.css"
 
 export const Questions = () => {
     return (
@@ -63,7 +64,7 @@ export const Questions = () => {
                     </div>
                 </div>
             </div>
-            <a className='btn btn-outline-secondary my-4' href='#'>Something else ?</a>
+            <a className='btn btn-outline-secondary my-4 p-1 px-2' href='#' style={{fontSize:"0.8rem",borderColor:"#bfbfbf"}}>Something else ?</a>
         </div>
     )
 }
