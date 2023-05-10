@@ -9,7 +9,7 @@ export const AboutUs = () => {
         <div className='aboutus-content pt-5'>
             <h2 className='fw-700 text-center m-0'>About us</h2>
             <p className='text-center m-0 mt-3'>A team that treats technology as a passion!</p>
-            <div className='d-flex flex-column flex-md-row col col-md-10 col-lg-8 my-4 pb-5 mx-auto justify-content-between'>
+            <div className='d-flex flex-column flex-md-row col col-md-10 col-lg-8 my-4 pb-5 gap-3 mx-auto justify-content-between'>
                 <div className='d-flex flex-column text-center'>
                     <div className='fw-bold fs-4'>100</div>
                     <div className='fs-4 text-muted'>thousand +</div>
