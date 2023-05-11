@@ -13,21 +13,21 @@ export const Questions = () => {
     useEffect(() => {
         if (questionsinView1) {
             questionsanimation1.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: 0,scale:1,
                 transition: { delay: 0.25, duration: 0.25 },
             });
         }
-        if (!questionsinView1) { questionsanimation1.start({ opacity: 0, y: 75 }); }
+        if (!questionsinView1) { questionsanimation1.start({ opacity: 0, y: 75,scale:0.5 }); }
     }, [questionsinView1]);
     
     useEffect(() => {
         if (questionsinView2) {
             questionsanimation2.start({
-                opacity: 1, y: 0,
+                opacity: 1, y: 0,x:0,
                 transition: { delay: 0.25, duration: 0.25 },
             });
         }
-        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75 }); }
+        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75,x:75 }); }
     }, [questionsinView2]);
 
     return (
