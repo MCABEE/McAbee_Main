@@ -27,6 +27,7 @@ export const Home = () => {
   const homeanimation1 = useAnimation();
   const homeanimation2 = useAnimation();
   const homeanimation3 = useAnimation();
+  
 
   const [homeref1, home1inView] = useInView({
     threshold: 0.2,
@@ -36,19 +37,20 @@ export const Home = () => {
     threshold: 0.2,
   });
   const [homeref3, home3inView] = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
   });
+  
 
   useEffect(() => {
     if (home1inView) {
       homeanimation1.start({
         opacity: 1,
         y: 0,
-        transition: { delay: 0.25, duration: 0.25 },
+        transition: { delay: 0.25, duration: 0.5 },
       });
     } 
     if(!home1inView){
-      homeanimation1.start({ opacity: 0, y: 75 });
+      homeanimation1.start({ opacity: 0, y: 0 });
     }
   }, [home1inView]);
 
@@ -56,12 +58,12 @@ export const Home = () => {
     if (home2inView) {
       homeanimation2.start({
         opacity: 1,
-        y: 0,
+        x: 0,
         transition: { delay: 0.25, duration: 0.25 },
       });
     } 
     if(!home2inView){
-      homeanimation2.start({ opacity: 0, y: 75 });
+      homeanimation2.start({ opacity: 0, x: 175 });
     }
   }, [home2inView]);
 
@@ -78,6 +80,7 @@ export const Home = () => {
     }
   }, [home3inView]);
 
+  
 
 
   return (
