@@ -1,13 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./question.css"
+import { useAnimation,motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export const Questions = () => {
+    const questionsanimation1 = useAnimation();
+    const questionsanimation2 = useAnimation();
+
+    const [questionsref1, questionsinView1] = useInView({ threshold: 0.2 });
+    const [questionsref2, questionsinView2] = useInView({ threshold: 0.2 });
+
+    useEffect(() => {
+        if (questionsinView1) {
+            questionsanimation1.start({
+                opacity: 1, y: 0,
+                transition: { delay: 0.25, duration: 0.25 },
+            });
+        }
+        if (!questionsinView1) { questionsanimation1.start({ opacity: 0, y: 75 }); }
+    }, [questionsinView1]);
+    
+    useEffect(() => {
+        if (questionsinView2) {
+            questionsanimation2.start({
+                opacity: 1, y: 0,
+                transition: { delay: 0.25, duration: 0.25 },
+            });
+        }
+        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75 }); }
+    }, [questionsinView2]);
+
     return (
         <>
-            <h4 className='text-center fs-2 mt-5'>Questions ?</h4>
-            <p className='text-center '>We are happy to respond, just shoot your Q's..</p>
+            <motion.div animate={questionsanimation1} ref={questionsref1}>
+                <h4 className='text-center fs-2 mt-5'>Questions ?</h4>
+                <p className='text-center '>We are happy to respond, just shoot your Q's..</p>
+            </motion.div>
             {/* Accordian menu starts here */}
-            <div className="accordion accordion-flush" id="accordionFlushExample">
+            <motion.div className="accordion accordion-flush" id="accordionFlushExample" ref={questionsref2} animate={questionsanimation2}>
                 {/* Accordian Item 1 */}
                 <div className="accordion-item">
                     <h2 className="accordion-header">
@@ -64,7 +94,7 @@ export const Questions = () => {
                     </div>
                 </div>
                 <a className='btn btn-outline-secondary ms-3 my-4 p-1 px-2' href='#' style={{ fontSize: "0.8rem", borderColor: "#bfbfbf" }}>Something else ?</a>
-            </div>
+            </motion.div>
         </>
     )
 }

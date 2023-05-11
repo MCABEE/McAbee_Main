@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./footer.scss"
 import { FooterTabs } from './footertabs/FooterTabs'
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa"
+import { motion,useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 export const Footer = () => {
+
+    const footeranimation1 = useAnimation()
+
+    const [footerref1,footerinView1] = useInView({threshold:0.2})
+
+    useEffect(()=>{
+        if(footerinView1){
+            footeranimation1.start({opacity:1,x:0,transition:{delay:0.25,duration:0.25}})
+        }
+        if(!footerinView1){footeranimation1.start({opacity:0,x:75})}
+    },[footerinView1])
+
     return (
-        <div className="container-fluid footer-container mt-5 pt-5" style={{ borderTop: "1px dashed black" }}>
+        <motion.div className="container-fluid footer-container mt-5 pt-5" style={{ borderTop: "1px dashed black" }} ref={footerref1}
+        animate={footeranimation1}>
             <footer >
                 <div className="footerTab">
                     <FooterTabs data={["Company", "About", "Careers", "Products", "Services"]} />
@@ -39,6 +54,6 @@ export const Footer = () => {
                     </select>
                 </div>
             </footer>
-        </div>
+        </motion.div>
     )
 }

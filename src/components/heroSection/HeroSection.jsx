@@ -1,24 +1,37 @@
 import React from 'react'
 import "./herosection.css"
 import { GoogleMapIcon } from '../../assets/GoogleMapIcon';
+import { motion } from "framer-motion"
 
 export const HeroSection = ({ data }) => {
+  
   const { image, topic, content, button } = data
   return (
     <div className='hero-section'>
       <div className='hero-section-content text-white'>
         {
           image && (
-            <div className='GoogleMapIconContainer'>
+            <motion.div initial={{ opacity: 0, y: "-200vh" }}
+            animate={{ opacity: 1, y: 1 }}
+            transition={{delay:2}}  className='GoogleMapIconContainer'>
               <GoogleMapIcon className="w-100" />
-            </div>
+            </motion.div>
           )
         }
 
-        <h3>{topic}</h3>
-        <p className='pb-4'>{content}</p>
+        <motion.h3
+          initial={{ opacity: 0, y: "-100vh" }}
+          animate={{ opacity: 1, y: 1 }}
+          transition={{delay:1,duration:1        }}>
+            {topic}
+            </motion.h3>
+        <motion.p initial={{ opacity: 0, x: "-50vw" }}
+          animate={{ opacity: 1, x: 1 }}
+          transition={{delay:3.5 ,duration:1 }} className='pb-4'>{content}</motion.p>
         {
-          button && <a className='heroSectionbtn' href='#'>{button}</a>
+          button && <motion.a initial={{ opacity: 0, x: "50vw" }}
+          animate={{ opacity: 1, x: 1 }}
+          transition={{delay:5,duration:1}} className='heroSectionbtn' href='#'>{button}</motion.a>
         }
 
       </div>

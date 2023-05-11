@@ -3,6 +3,7 @@ import "./navbar.css"
 import { RiMenu3Fill } from "react-icons/ri"
 import { FaLinkedinIn, FaFacebookF, FaTwitter } from "react-icons/fa"
 import { Link } from 'react-router-dom'
+import { motion } from "framer-motion"
 
 export const Navbar = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -14,14 +15,18 @@ export const Navbar = () => {
     <>
       <div className={`container navigation ${isChecked ? 'h-100' : ''}`}>
         <div className=' container d-flex position-relative align-items-center justify-content-between pt-3 '>
-          <div className='fs-3 text-white'>
+          <motion.div initial={{ opacity: 0, x: "-50vw" }}
+            animate={{ opacity: 1, x: 1 }}
+            transition={{delay:2,duration:1}} className='fs-3 text-white'>
           <Link to="/" className='text-white'>MCABEE</Link>
-          </div>
+          </motion.div>
           <div className=''>
             <input type="checkbox" id="check" onChange={handleCheckboxChange}/>
-            <label htmlFor="check">
+            <motion.label initial={{ opacity: 0, x: "50vw" }}
+            animate={{ opacity: 1, x: 1 }}
+            transition={{delay:2.3,duration:1}} htmlFor="check">
               <RiMenu3Fill color={"#8dcff4"} size={25} />
-            </label>
+            </motion.label>
 
             <div className="sidebar z-3">
               <div className='sidebarcontentwrapper'>
