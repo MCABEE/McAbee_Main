@@ -57,18 +57,17 @@ export const ServiceCards = () => {
             <motion.div className='servicecard3' ref={servicecardref3} animate={servicecardanimation3} >
                 <p className='fs-6 fw-bold'>In the <span className='fs-5'>NEWS</span></p>
                 <div className='border-bottom'>
-                    <p className='fw-700'>MCABEE launched 'Firstlook' a social app for matchmaking, the first of its kind.</p>
+                    <p className='fw-700'><a href="#" className='text-reset servicecardhoverlink'>MCABEE launched 'Firstlook' a social app for matchmaking, the first of its kind.</a> </p>
                     <p>India's first social network to help find life partners has launched, ushering in a quarter century long shift in the online matchmaking era.</p>
                     <p className="date">01 July 2023</p>
                 </div>
                 <div className='pt-3'>
-                    <p className='fw-700'>MCABEE announced their 'Notepad' app today.</p>
+                    <p className='fw-700'><a href="#" className='text-reset servicecardhoverlink'>MCABEE announced their 'Notepad' app today.</a> </p>
                     <p>MCABEE announced that their new product 'Notepad' app will be launched in 2023 itself.</p>
                     <p className="date">22 June 2023</p>
                 </div>
-                <a href="/">More</a>
+                <a href="/" className='text-reset servicecardhoverlink'>more</a>
             </motion.div>
         </div>
-
     )
 }

@@ -23,6 +23,29 @@
   justify-content: center;
   align-items: center;
   padding: 0.2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+.footerfbsocialmediaicon{
+  &:hover{
+    background-color: #1877f2 !important;
+  }
+}
+.footerlinkedinmediaicon{
+  &:hover{
+    background-color: #0077B5 !important;
+  }
+}
+.footertweetsocialmediaicon{
+  &:hover{
+    background-color: #1DA1F2 !important;
+  }
+}
+.footerwhastapsocialmediaicon{
+  &:hover{
+    background-color: #25D366 !important;
+  }
 }
 .footericontab span a{
   color: #666666;
@@ -44,6 +67,13 @@
   position: absolute;
   top: 3px;
   left:48px;
+}
+.texthoverunderline{
+  transition: 0.3s ease;
+  &:hover{
+    text-decoration: underline;
+    transition: 0.3s ease;
+  }
 }
 
 

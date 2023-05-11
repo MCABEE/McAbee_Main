@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import SwiperCore,{ Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
 import { FaGooglePlay } from "react-icons/fa"
 import { BsApple } from "react-icons/bs"
@@ -100,15 +100,14 @@ const productcardDetails = [
 ]
 
 export default function ProductCarousel() {
-    
+
     return (
-        <div >
+        <div className="carousel-container">
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
                 modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                navigation
-                autoplay={{ delay: 3000,disableOnInteraction: false }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
                 loop={true}
                 breakpoints={{
                     // when window width is <= 640px

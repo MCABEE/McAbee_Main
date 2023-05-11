@@ -1,5 +1,5 @@
 import React from 'react'
-import "./contactdetails.css"
+import "./contactdetails.scss"
 
 export const ContactDetails = () => {
     return (

@@ -4,6 +4,7 @@ import { FooterTabs } from './footertabs/FooterTabs'
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa"
 import { motion,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
 
@@ -31,21 +32,21 @@ export const Footer = () => {
                     <div className='footericontab pt-3'>
                         <h5 className='fw-bold fs-6 text-end  text-muted'>Follow us on</h5>
                         <div className='d-flex gap-2'>
-                            <a className='footerIconDiv' href='https://www.facebook.com/'><FaFacebookF color='white' size="1.2rem" /></a>
-                            <a className='footerIconDiv' href='https://www.linkedin.com/'><FaLinkedinIn color='white' size="1.2rem" /></a>
-                            <a className='footerIconDiv' href='https://twitter.com/home'> <FaTwitter color='white' size="1.2rem" /></a>
-                            <a className='footerIconDiv' href='https://www.whatsapp.com/'><FaWhatsapp color='white' size="1.2rem" /></a>
+                            <a className='footerIconDiv footerfbsocialmediaicon' href='https://www.facebook.com/'><FaFacebookF className='' /></a>
+                            <a className='footerIconDiv footerlinkedinmediaicon' href='https://www.linkedin.com/'><FaLinkedinIn className='' /></a>
+                            <a className='footerIconDiv footertweetsocialmediaicon' href='https://twitter.com/home'> <FaTwitter className='' /></a>
+                            <a className='footerIconDiv footerwhastapsocialmediaicon' href='https://www.whatsapp.com/'><FaWhatsapp className='' /></a>
                         </div>
                         <div className='position-relative ' style={{fontSize:"12px"}}>
-                            <span><a href="#">Privacy</a> </span>
-                            <span className='px-3 termscookiesverLine'><a href="#">Term</a></span>
-                            <span><a href="#">Cookies</a> </span>
+                            <span><a className='texthoverunderline' href="#">Privacy</a> </span>
+                            <span className='px-3 termscookiesverLine texthoverunderline'><a href="#">Term</a></span>
+                            <span><a className='texthoverunderline' href="#">Cookies</a> </span>
                         </div>
                     </div>
                 </div>
 
                 <div className="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
-                    <p>Copyright (c) 2023 <span className='fw-bold'>MCABEE</span></p>
+                    <p>Copyright (c) 2023 <span className='fw-bold'><a href="#">MCABEE</a> </span></p>
                     <select className="form-select" style={{ width: "15rem",fontSize:"0.8rem" }}>
                         <option >Select Region</option>
                         <option value="1">One</option>

@@ -44,5 +44,11 @@
     a{
         text-decoration: none;
     }
+    .servicecardhoverlink{
+      &:hover{
+        color: #c94f30 !important;
+        text-decoration: underline;
+      }
+    }
   }
 }
