@@ -107,7 +107,7 @@ export default function ProductCarousel() {
                 slidesPerView={1}
                 spaceBetween={30}
                 modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 3000, disableOnInteraction: true }}
                 loop={true}
                 breakpoints={{
                     // when window width is <= 640px
@@ -115,7 +115,7 @@ export default function ProductCarousel() {
                         slidesPerView: 1.5,
 
                     },
-                    576: {
+                    680: {
                         slidesPerView: 2.5,
                     },
                     992: {
@@ -139,13 +139,13 @@ export default function ProductCarousel() {
                                             <div className="productLogo">
                                                 <img src={item.logo} alt="" />
                                             </div>
-                                            <h6 className="ps-2  ">{item.title}</h6>
+                                            <h6 className="ps-2 fw-700 text-muted">{item.title}</h6>
                                         </div>
                                         <p className="producttext text-secondary pt-2">{item.content}</p>
 
                                         <div className=" position-absolute bottom-0 pb-3" style={{ width: "80%" }}>
                                             <div className="d-flex justify-content-between">
-                                                <a className="text-muted fs-6 pc-learnmore" >Learn More</a>
+                                                <a className="text-muted pc-learnmore" style={{fontSize:"1rem"}}>Learn More</a>
                                                 <div className="d-flex gap-3">
                                                     <BsApple className="pc-bs-apple" size={20} />
                                                     <FaGooglePlay className="pc-googleplay" size={20} />

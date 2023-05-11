@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer'
 
 
 let herosectionData = {
-  "image": true,
+  "image": false,
   "topic": "Think Different Make Difference!",
   "content": "A pure play internet company have multiple products in various sectors.",
   "button": "Learn More"
@@ -102,7 +102,7 @@ export const Home = () => {
           <motion.div
            ref={homeref3}  animate={homeanimation3}
             className='pt-5 text-center'>
-            <a href="#" className='btn btn-outline-secondary '>View all products</a>
+            <a href="#" className='btn btn-outline-secondary '>VIEW ALL PRODUCTS</a>
           </motion.div>
 
         </div>

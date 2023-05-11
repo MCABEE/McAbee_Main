@@ -14,7 +14,7 @@ export const HeroSection = ({ data }) => {
             <motion.div initial={{ opacity: 0, y: "-200vh" }}
             animate={{ opacity: 1, y: 1 }}
             transition={{delay:2}}  className='GoogleMapIconContainer'>
-              <GoogleMapIcon className="w-100" />
+              <GoogleMapIcon width={5} height={5}/>
             </motion.div>
           )
         }

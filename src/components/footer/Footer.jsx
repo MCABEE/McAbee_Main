@@ -5,6 +5,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa
 import { motion,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
+import upbottomarrow from "../../assets/Layer-38.png"
 
 export const Footer = () => {
 
@@ -23,7 +24,7 @@ export const Footer = () => {
         <motion.div className="container-fluid footer-container mt-5 pt-5" style={{ borderTop: "1px dashed black" }} ref={footerref1}
         animate={footeranimation1}>
             <footer >
-                <div className="footerTab">
+                <div className="footerTab position-relative">
                     <FooterTabs data={["Company", "About", "Careers", "Products", "Services"]} />
                     <FooterTabs data={["Products", "Firstlook", "Notepad", "Search Engine", "View all"]} />
                     <FooterTabs data={["Services", "Product Design", "Mobile Application", "Web Application", "More"]} />
@@ -37,7 +38,7 @@ export const Footer = () => {
                             <a className='footerIconDiv footertweetsocialmediaicon' href='https://twitter.com/home'> <FaTwitter className='' /></a>
                             <a className='footerIconDiv footerwhastapsocialmediaicon' href='https://www.whatsapp.com/'><FaWhatsapp className='' /></a>
                         </div>
-                        <div className='position-relative ' style={{fontSize:"12px"}}>
+                        <div className='position-relative ' style={{fontSize:"14px"}}>
                             <span><a className='texthoverunderline' href="#">Privacy</a> </span>
                             <span className='px-3 termscookiesverLine texthoverunderline'><a href="#">Term</a></span>
                             <span><a className='texthoverunderline' href="#">Cookies</a> </span>
@@ -53,6 +54,9 @@ export const Footer = () => {
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                </div>
+                <div className='upbotomarrowdiv'>
+                   <a href="#"> <img src={upbottomarrow} alt="" className='upbotomarrow' /></a>
                 </div>
             </footer>
         </motion.div>
