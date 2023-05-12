@@ -51,7 +51,7 @@ export const Home = () => {
         transition: { delay: 0.25, duration: 0.5 },
       });
     }else{
-      homeanimation1.start({ opacity: 0, y: 0 });
+      homeanimation1.start({ opacity: 0, y: -50 });
     }
   }, [home1inView]);
 
@@ -59,12 +59,12 @@ export const Home = () => {
     if (home2inView) {
       homeanimation2.start({
         opacity: 1,
-        x: 0,
+        y: 0,
         transition: { delay: 0.25, duration: 0.25 },
       });
     }
     if (!home2inView) {
-      homeanimation2.start({ opacity: 0, x: 50 });
+      homeanimation2.start({ opacity: 0, y: -50 });
     }
   }, [home2inView]);
 
@@ -72,12 +72,12 @@ export const Home = () => {
     if (home3inView) {
       homeanimation3.start({
         opacity: 1,
-        x: 0, scale: 1,
+        y: 0, scale: 1,
         transition: { delay: 1, duration: 0.2, type: spring },
       });
     }
     if (!home3inView) {
-      homeanimation3.start({ opacity: 0, x: -100, scale: 0.75 });
+      homeanimation3.start({ opacity: 0, y: -100, scale: 0.75 });
     }
   }, [home3inView]);
 

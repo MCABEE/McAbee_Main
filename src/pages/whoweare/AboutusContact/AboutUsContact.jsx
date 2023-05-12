@@ -17,22 +17,22 @@ export const AboutUsContact = () => {
   useEffect(() => {
     if (aboutuscontactinView1) {
       aboutuscontactanimation1.start({
-        opacity: 1, x: 0,
+        opacity: 1, y: 0,
         transition: { delay: 0.25, duration: 0.25 },
       });
     }
-    if (!aboutuscontactinView1) { aboutuscontactanimation1.start({ opacity: 0, x:175 }); }
+    if (!aboutuscontactinView1) { aboutuscontactanimation1.start({ opacity: 0, y:25 }); }
   }, [aboutuscontactinView1]);
 
   useEffect(() => {
     if (aboutuscontactinView2) {
       aboutuscontactanimation2.start({
         opacity: 1,
-        x: 0,
+        y: 0,
         transition: { delay: 0.25, duration: 0.25 },
       });
     } 
-    if (!aboutuscontactinView2) { aboutuscontactanimation2.start({ opacity: 0, x:-175 }); }
+    if (!aboutuscontactinView2) { aboutuscontactanimation2.start({ opacity: 0, y:-25 }); }
   }, [aboutuscontactinView2]);
 
 

@@ -1,13 +1,14 @@
 .navigation{
   right: 50%;
   transform: translateX(50%);
+  top: 1rem;
   position: absolute;
   overflow-x: hidden;
   /* height: 100%; */
   z-index: 999;
 }
 .sidebar {
-  position:absolute;
+ position: absolute;
   right: -500px;
   width: 250px;
   height: 100%;

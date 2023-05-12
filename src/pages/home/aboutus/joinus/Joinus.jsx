@@ -48,11 +48,11 @@ export const Joinus = () => {
     useEffect(() => {
         if (joinusinView2) {
             joinusanimation2.start({
-                opacity: 1, x: 0,
+                opacity: 1, y: 0,
                 transition: { delay: 0.25, duration: 0.25 },
             });
         }
-        if (!joinusinView2) { joinusanimation2.start({ opacity: 0, x: -100 }); }
+        if (!joinusinView2) { joinusanimation2.start({ opacity: 0, y: -25 }); }
     }, [joinusinView2]);
 
     useEffect(() => {
@@ -68,31 +68,31 @@ export const Joinus = () => {
     useEffect(() => {
         if (joinusinView4) {
             joinusanimation4.start({
-                opacity: 1, x: 0,
+                opacity: 1, y: 0,
                 transition: { delay: 0.45, duration: 0.25 },
             });
         }
-        if (!joinusinView4) { joinusanimation4.start({ opacity: 0, x: 100 }); }
+        if (!joinusinView4) { joinusanimation4.start({ opacity: 0, y: 25 }); }
     }, [joinusinView4]);
 
     useEffect(() => {
         if (joinusinView5) {
             joinusanimation5.start({
-                opacity: 1, x: 0, scale: 1,
+                opacity: 1, y: 0, scale: 1,
                 transition: { delay: 0.35, duration: 0.25 },
             });
         }
-        if (!joinusinView5) { joinusanimation5.start({ opacity: 0, x: -300, scale: 0 }); }
+        if (!joinusinView5) { joinusanimation5.start({ opacity: 0, y:0, scale: 0 }); }
     }, [joinusinView5]);
 
     useEffect(() => {
         if (joinusinView6) {
             joinusanimation6.start({
-                opacity: 1, x: 0, scale: 1,
+                opacity: 1, y: 0, scale: 1,
                 transition: { delay: 0.65, duration: 0.25 },
             });
         }
-        if (!joinusinView6) { joinusanimation6.start({ opacity: 0, x: 300, scale: 0 }); }
+        if (!joinusinView6) { joinusanimation6.start({ opacity: 0, y: 25, scale: 0 }); }
     }, [joinusinView6]);
 
     return (

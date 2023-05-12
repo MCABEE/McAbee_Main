@@ -14,8 +14,6 @@ export const AboutUs = () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 setcounter(true)
-            } else {
-                setcounter(false)// element is not visible, do something else
             }
         });
     };
@@ -65,11 +63,11 @@ export const AboutUs = () => {
             aboutusanimation2.start({
                 opacity: 1,
                 x: 0,
-                transition: { delay: 0.25, duration: 0.25 },
+                transition: { delay: 0.25, duration: 0.35 },
             });
         }
         if (!aboutusinView2) {
-            aboutusanimation2.start({ opacity: 0, x: -100 });
+            aboutusanimation2.start({ opacity: 0, x: -20 });
         }
     }, [aboutusinView2]);
 
@@ -78,11 +76,11 @@ export const AboutUs = () => {
             aboutusanimation3.start({
                 opacity: 1,
                 x: -30,
-                transition: { delay: 0.25, duration: 0.25 },
+                transition: { delay: 0.25, duration: 0.35 },
             });
         }
         if (!aboutusinView3) {
-            aboutusanimation3.start({ opacity: 0, x: 100 });
+            aboutusanimation3.start({ opacity: 0, x: 10 });
         }
     }, [aboutusinView3]);
 

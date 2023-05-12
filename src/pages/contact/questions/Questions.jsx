@@ -27,7 +27,7 @@ export const Questions = () => {
                 transition: { delay: 0.25, duration: 0.25 },
             });
         }
-        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75, x: 75, transition: { delay: 0.25, duration: 0.25 } }) }
+        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75, x: 0, transition: { delay: 0.25, duration: 0.25 } }) }
     }, [questionsinView2]);
 
     return (
