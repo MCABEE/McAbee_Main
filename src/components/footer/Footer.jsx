@@ -4,7 +4,6 @@ import { FooterTabs } from './footertabs/FooterTabs'
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa"
 import { motion,useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Link } from 'react-router-dom'
 import upbottomarrow from "../../assets/Layer-38.png"
 
 export const Footer = () => {
@@ -18,19 +17,19 @@ export const Footer = () => {
 
     const footeranimation1 = useAnimation()
 
-    const [footerref1,footerinView1] = useInView({threshold:0.2})
+    const [footerref1,footerinView1] = useInView({threshold:0.2,triggerOnce:true})
 
     useEffect(()=>{
         if(footerinView1){
-            footeranimation1.start({opacity:1,x:0,transition:{delay:0.25,duration:0.25}})
+            footeranimation1.start({opacity:1,y:0,transition:{delay:0.25,duration:0.25}})
         }
-        if(!footerinView1){footeranimation1.start({opacity:0,x:75})}
+        if(!footerinView1){footeranimation1.start({opacity:0,y:-75})}
     },[footerinView1])
 
     return (
-        <motion.div className="container-fluid footer-container mt-5 pt-5" style={{ borderTop: "1px dashed black" }} ref={footerref1}
+        <div className="container-fluid footer-container mt-5 pt-5" style={{ borderTop: "1px dashed black" }} >
+            <motion.footer ref={footerref1}
         animate={footeranimation1}>
-            <footer >
                 <div className="footerTab position-relative">
                     <FooterTabs data={["Company", "About", "Careers", "Products", "Services"]} />
                     <FooterTabs data={["Products", "Firstlook", "Notepad", "Search Engine", "View all"]} />
@@ -67,7 +66,7 @@ export const Footer = () => {
                 <div className='upbotomarrowdiv'>
                    <a href="#"> <img src={upbottomarrow} alt="" className='upbotomarrow' /></a>
                 </div>
-            </footer>
-        </motion.div>
+            </motion.footer>
+        </div>
     )
 }

@@ -5,9 +5,9 @@ import { motion } from "framer-motion"
 
 export const HeroSection = ({ data }) => {
   
-  const { image, topic, content, button } = data
+  const { image, topic, content, button,background } = data
   return (
-    <div className='hero-section'>
+    <div className={`hero-section ${background}`}>
       <div className='hero-section-content text-white'>
         {
           image && (

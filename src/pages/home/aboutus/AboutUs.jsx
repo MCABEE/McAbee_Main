@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./aboutus.scss"
-import { ServiceCards } from './servicecards/ServiceCards'
-import { Joinus } from './joinus/Joinus'
 import aboutusimg from "../../../assets/aboutus.png"
 import CountUp from 'react-countup'
 import { motion, useAnimation } from 'framer-motion'
@@ -25,8 +23,9 @@ export const AboutUs = () => {
     useEffect(() => {
         const options = {
             root: null,
-            rootMargin: '0px',
-            threshold: 0.5 // adjust as needed
+            rootMargin: '5px',
+            threshold: 0.5, // adjust as needed
+            triggerOnce: true
         };
 
         const observer = new IntersectionObserver(handleIntersection, options);
@@ -46,10 +45,10 @@ export const AboutUs = () => {
     const aboutusanimation3 = useAnimation();
     const aboutusanimation4 = useAnimation();
 
-    const [aboutusref1, aboutusinView1] = useInView({ threshold: 0.2 });
-    const [aboutusref2, aboutusinView2] = useInView({ threshold: 0.2 });
-    const [aboutusref3, aboutusinView3] = useInView({ threshold: 0.2 });
-    const [aboutusref4, aboutusinView4] = useInView({ threshold: 0.2 });
+    const [aboutusref1, aboutusinView1] = useInView({ threshold: 0.2,triggerOnce: true});
+    const [aboutusref2, aboutusinView2] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [aboutusref3, aboutusinView3] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [aboutusref4, aboutusinView4] = useInView({ threshold: 0.2,triggerOnce: true });
 
     useEffect(() => {
         if (aboutusinView1) {
@@ -154,12 +153,8 @@ export const AboutUs = () => {
                     <button className='btn btn-outline-secondary'>more</button>
                 </motion.div>
             </div>
-            <div className='AUsServiceCards d-flex justify-content-evenly'>
-                <ServiceCards />
-            </div>
-            <div>
-                <Joinus />
-            </div>
+            
+            
         </div>
     )
 }

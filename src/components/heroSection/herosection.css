@@ -1,12 +1,23 @@
 .hero-section {
   max-width: 100%;
   min-height: 100vh;
+  
+  
+}
+.herosecGradientBg{
   background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.85),
-      rgba(0, 0, 0, 0.85)
-    ),
-    url("../../assets/banner_Image.jpg");
+    to right,
+    #4a92d5,
+    #9ec880
+  );
+}
+.herosecimgBg{
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.85)
+  ),
+  url("../../assets/banner_Image.jpg");
   background-size: cover;
   background-position: center;
 }

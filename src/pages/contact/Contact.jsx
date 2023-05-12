@@ -10,7 +10,8 @@ import { BottomGradient } from '../../components/bottomGradient/BottomGradient'
 let hersectionData={
   "image":true,
   "topic":"Connect With MCABEE!",
-  "content":"Thank you for reaching us ! Select the service you need form below."
+  "content":"Thank you for reaching us ! Select the service you need form below.",
+  "background":"herosecimgBg"
 }
 
 export const Contact = () => {

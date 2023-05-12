@@ -5,13 +5,14 @@ import { useInView } from 'react-intersection-observer';
 
 
 export const ServiceCards = () => {
+
     const servicecardanimation1 = useAnimation();
     const servicecardanimation2 = useAnimation();
     const servicecardanimation3 = useAnimation();
 
-    const [servicecardref1, servicecardinView1] = useInView({threshold: 0.2,reset: true});
-    const [servicecardref2, servicecardinView2] = useInView({threshold: 0.2,reset: true});
-    const [servicecardref3, servicecardinView3] = useInView({threshold: 0.2,reset: true});
+    const [servicecardref1, servicecardinView1] = useInView({threshold: 0.2,triggerOnce: true});
+    const [servicecardref2, servicecardinView2] = useInView({threshold: 0.2,triggerOnce: true});
+    const [servicecardref3, servicecardinView3] = useInView({threshold: 0.2,triggerOnce: true});
 
     useEffect(() => {
         if (servicecardinView1) {
@@ -21,6 +22,7 @@ export const ServiceCards = () => {
         } 
         if(!servicecardinView1){servicecardanimation1.start({ opacity: 0, y: 75,transition: { delay: 0.25, duration: 0.25 } });}
       }, [servicecardinView1]);
+      
     useEffect(() => {
         if (servicecardinView2) {
             servicecardanimation2.start({opacity: 1,y: 0,

@@ -28,12 +28,12 @@ export const Joinus = () => {
     const joinusanimation5 = useAnimation();
     const joinusanimation6 = useAnimation();
 
-    const [joinusref1, joinusinView1] = useInView({ threshold: 0.2 });
-    const [joinusref2, joinusinView2] = useInView({ threshold: 0.2 });
-    const [joinusref3, joinusinView3] = useInView({ threshold: 0.2 });
-    const [joinusref4, joinusinView4] = useInView({ threshold: 0.2 });
-    const [joinusref5, joinusinView5] = useInView({ threshold: 0.2 });
-    const [joinusref6, joinusinView6] = useInView({ threshold: 0.2 });
+    const [joinusref1, joinusinView1] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [joinusref2, joinusinView2] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [joinusref3, joinusinView3] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [joinusref4, joinusinView4] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [joinusref5, joinusinView5] = useInView({ threshold: 0.2,triggerOnce: true });
+    const [joinusref6, joinusinView6] = useInView({ threshold: 0.2,triggerOnce: true });
 
     useEffect(() => {
         if (joinusinView1) {

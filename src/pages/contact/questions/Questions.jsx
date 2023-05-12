@@ -7,8 +7,8 @@ export const Questions = () => {
     const questionsanimation1 = useAnimation();
     const questionsanimation2 = useAnimation();
 
-    const [questionsref1, questionsinView1] = useInView({ threshold: 0.2 });
-    const [questionsref2, questionsinView2] = useInView({ threshold: 0.2 });
+    const [questionsref1, questionsinView1] = useInView({ threshold: 0.2,triggerOnce:true });
+    const [questionsref2, questionsinView2] = useInView({ threshold: 0.2,triggerOnce:true });
 
     useEffect(() => {
         if (questionsinView1) {
