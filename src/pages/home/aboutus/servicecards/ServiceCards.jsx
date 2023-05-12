@@ -9,9 +9,9 @@ export const ServiceCards = () => {
     const servicecardanimation2 = useAnimation();
     const servicecardanimation3 = useAnimation();
 
-    const [servicecardref1, servicecardinView1] = useInView({threshold: 0.2});
-    const [servicecardref2, servicecardinView2] = useInView({threshold: 0.2});
-    const [servicecardref3, servicecardinView3] = useInView({threshold: 0.2});
+    const [servicecardref1, servicecardinView1] = useInView({threshold: 0.2,reset: true});
+    const [servicecardref2, servicecardinView2] = useInView({threshold: 0.2,reset: true});
+    const [servicecardref3, servicecardinView3] = useInView({threshold: 0.2,reset: true});
 
     useEffect(() => {
         if (servicecardinView1) {
@@ -19,7 +19,7 @@ export const ServiceCards = () => {
             transition: { delay: 0.25, duration: 0.25 },
           });
         } 
-        if(!servicecardinView1){servicecardanimation1.start({ opacity: 0, y: 75 });}
+        if(!servicecardinView1){servicecardanimation1.start({ opacity: 0, y: 75,transition: { delay: 0.25, duration: 0.25 } });}
       }, [servicecardinView1]);
     useEffect(() => {
         if (servicecardinView2) {
@@ -27,7 +27,7 @@ export const ServiceCards = () => {
             transition: { delay: 0.45, duration: 0.25 },
           });
         } 
-        if(!servicecardinView2){servicecardanimation2.start({ opacity: 0, y: 75 });}
+        if(!servicecardinView2){servicecardanimation2.start({ opacity: 0, y: 75,transition: { delay: 0.25, duration: 0.25 }, });}
       }, [servicecardinView2]);
     useEffect(() => {
         if (servicecardinView3) {
@@ -35,7 +35,7 @@ export const ServiceCards = () => {
             transition: { delay: 0.65, duration: 0.25 },
           });
         } 
-        if(!servicecardinView3){servicecardanimation3.start({ opacity: 0, y: 75 });}
+        if(!servicecardinView3){servicecardanimation3.start({ opacity: 0, y: 75,transition: { delay: 0.25, duration: 0.25 }, });}
       }, [servicecardinView3]);
 
     return (

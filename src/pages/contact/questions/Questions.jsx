@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "./question.css"
-import { useAnimation,motion } from 'framer-motion';
+import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 export const Questions = () => {
@@ -13,21 +13,21 @@ export const Questions = () => {
     useEffect(() => {
         if (questionsinView1) {
             questionsanimation1.start({
-                opacity: 1, y: 0,scale:1,
+                opacity: 1, y: 0, scale: 1,
                 transition: { delay: 0.25, duration: 0.25 },
             });
         }
-        if (!questionsinView1) { questionsanimation1.start({ opacity: 0, y: 75,scale:0.5 }); }
+        if (!questionsinView1) { questionsanimation1.start({ opacity: 0, y: 75, scale: 0.5 }); }
     }, [questionsinView1]);
-    
+
     useEffect(() => {
         if (questionsinView2) {
             questionsanimation2.start({
-                opacity: 1, y: 0,x:0,
+                opacity: 1, y: 0, x: 0,
                 transition: { delay: 0.25, duration: 0.25 },
             });
         }
-        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75,x:75 }); }
+        if (!questionsinView2) { questionsanimation2.start({ opacity: 0, y: 75, x: 75, transition: { delay: 0.25, duration: 0.25 } }) }
     }, [questionsinView2]);
 
     return (
@@ -93,7 +93,7 @@ export const Questions = () => {
                         <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
                     </div>
                 </div>
-                <a className='btn btn-outline-secondary ms-3 my-4' href='#' style={{borderColor: "#bfbfbf" }}>Something else ?</a>
+                <a className='btn btn-outline-secondary ms-3 my-4' href='#' style={{ borderColor: "#bfbfbf" }}>Something else ?</a>
             </motion.div>
         </>
     )

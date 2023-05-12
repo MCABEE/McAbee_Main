@@ -86,7 +86,7 @@ export const Home = () => {
   return (
     <>
       <div>
-        <Navbar />
+      <Navbar />
         <HeroSection data={herosectionData} />
         <div >
           <motion.p ref={homeref1}

@@ -2,11 +2,14 @@
 
 * {
   font-family: "Oxygen", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
   overflow-x: hidden; /* hide horizontal overflow */
-  margin: 0; /* remove default margin */
-  width: 100%; /* set width to 100% */
+
+  width: 100vw; /* set width to 100% */
 }
 
 a {

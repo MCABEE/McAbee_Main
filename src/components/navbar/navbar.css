@@ -28,8 +28,8 @@
   font-size: 22px;
   color: #0669b2;
   line-height: 70px;
-  text-align: center;
   user-select: none;
+  padding-left: 1.9rem;
 }
 .sidebar ul a{
   display: block;
@@ -38,7 +38,6 @@
   line-height: 50px;
   font-size: 16px;
   color: #3d5672;
-  padding-left: 40px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(160, 159, 159);
   transition: .4s;
@@ -47,7 +46,8 @@
   border-bottom: none;
 }
 ul li:hover a{
-  padding-left: 50px;
+  padding-left: 10px;
+  font-size: 1.1rem;
 }
 #check{
   display: none;

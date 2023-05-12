@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./footer.scss"
 import { FooterTabs } from './footertabs/FooterTabs'
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa"
@@ -8,6 +8,13 @@ import { Link } from 'react-router-dom'
 import upbottomarrow from "../../assets/Layer-38.png"
 
 export const Footer = () => {
+
+    const [selectvalue, setselectvalue] = useState("Select Region")
+
+    const handleSelectValue = (e)=>{
+        e.preventDefault()
+        setselectvalue(e.target.value)
+    }
 
     const footeranimation1 = useAnimation()
 
@@ -46,13 +53,15 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                <div className="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
+                <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-4 mt-4 border-top">
                     <p>Copyright (c) 2023 <span className='fw-bold'><a href="#">MCABEE</a> </span></p>
-                    <select className="form-select" style={{ width: "15rem",fontSize:"0.8rem" }}>
+                    <select value={selectvalue} onChange={(e)=>handleSelectValue(e)} className="form-select"  style={{ width: "15rem",fontSize:"0.8rem" }}>
                         <option >Select Region</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">India</option>
+                        <option value="2">Europe</option>
+                        <option value="3">Australia-NZ</option>
+                        <option value="4">US-Canada</option>
+                        <option value="5">Middle East</option>
                     </select>
                 </div>
                 <div className='upbotomarrowdiv'>

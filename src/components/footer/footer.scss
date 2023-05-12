@@ -113,11 +113,13 @@
   .footerTab{
     display:grid;
     grid-template-columns: 1fr 1fr;
-
+    grid-template-areas:
+      "no no"
+      "no no" 
+      "full full";
   }
   .footericontab {
-    width: 100%;
-    align-items: center;
+    grid-area: full;
   }
   .upbotomarrow{
     display: none;

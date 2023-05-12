@@ -102,7 +102,7 @@ const productcardDetails = [
 export default function ProductCarousel() {
 
     return (
-        <div className="carousel-container">
+        <div className="product-carousel-container">
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
