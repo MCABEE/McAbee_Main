@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 //import styles
-import "./WhoweareTeamContent.scss"
+import "./whoweareTeamContent.scss"
 
 export const WhoweareTeamContent = () => {
   const whowearTeameAnimation1 = useAnimation();
