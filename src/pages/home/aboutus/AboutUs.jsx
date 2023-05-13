@@ -91,11 +91,9 @@ export const AboutUs = () => {
                 x: 0,
                 transition: { delay: 0.5, duration: 0.5 },
             });
-            console.log("trueop");
         }
         if (!aboutusinView4) {
             aboutusanimation4.start({ opacity: 0, x: 0 });
-            console.log("falseop");
         }
     }, [aboutusinView4]);
 
