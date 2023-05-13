@@ -25,6 +25,16 @@
               padding: 0.3rem 0 0;
               font-size: 0.9rem;
             }
+            a{
+              img{
+                transition: 0.4s ease;
+                &:hover{
+                  opacity: 0.6;
+                  transform: scale(1.1);
+                  transition: 0.4s ease;
+                }
+              }
+            }
           }
         }
         .div1 {

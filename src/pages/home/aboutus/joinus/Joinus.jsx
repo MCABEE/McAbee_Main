@@ -155,7 +155,9 @@ export const Joinus = () => {
             <motion.div className='aboutusarrow' ref={joinusref5} animate={joinusanimation5} >
                 <img src={aboutusarowpng} alt="" />
             </motion.div>
-            <motion.button className='btn btn-outline-secondary' ref={joinusref6} animate={joinusanimation6}>Search and Apply</motion.button>
+            <motion.div className='text-center' ref={joinusref6} animate={joinusanimation6}>
+            <button className='btn btn-outline-secondary' >Search and Apply</button>
+            </motion.div>
         </div>
     )
 }
