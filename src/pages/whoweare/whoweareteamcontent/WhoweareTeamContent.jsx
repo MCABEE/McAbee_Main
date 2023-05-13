@@ -37,7 +37,7 @@ export const WhoweareTeamContent = () => {
     <>
       <div className='col  mt-5' style={{ padding: "0 25px" }}>
         <div className="d-flex flex-column flex-lg-row gap-4 ">
-          <motion.div className='border d-flex flex-column WhoweareTeamContent' ref={whowearTeameref1} animate={whowearTeameAnimation1} style={{width:"60%"}}>
+          <motion.div className='border d-flex flex-column WhoweareTeamContent WhoweareTeamContent1' ref={whowearTeameref1} animate={whowearTeameAnimation1}>
             <h5 className='text-primary mb-3 fw-700'>About MCABEE</h5>
             <p>A team that treats technology as a passion!</p>
             <p style={{ textAlign: "justify" }}>MCABEE is a company founded with the aim of making some useful applications that are needed in the daily life of a common man.  It doesn't have to be a completely new invention.  The aim is to create a change in the market by completely replacing an existing product that demands a reinvention.</p>
@@ -48,7 +48,7 @@ export const WhoweareTeamContent = () => {
           </motion.div>
 
           {/* Col 2 */}
-          <motion.div className='border d-flex flex-column WhoweareTeamContent' ref={whowearTeameref2} animate={whowearTeameAnimation2} style={{width:"40%"}}>
+          <motion.div className='border d-flex flex-column WhoweareTeamContent WhoweareTeamContent2' ref={whowearTeameref2} animate={whowearTeameAnimation2}>
             <h5 className='text-primary pb-3  fw-700'>Our Story, Team</h5>
             <p>Our Story</p>
             <p style={{ textAlign: "justify" }}>Originated as a startup company in May 2012, we developed two SaaS products in Healthcare and Architecture segments.  Also, as a web design and development company, we successfully completed web applications for 25+ organizations.</p>
