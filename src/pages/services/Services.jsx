@@ -28,32 +28,33 @@ const herosectionData = {
 
 const servicesData = [
   {
-    "id":1,"logoicon":android, "title":"Mobile App Development","content":"One of the best IOS - Android Mobile app development company in India","background": "herosecGradientBg"
+    "id":1,"logoicon":android, "title":"Mobile App Development","content":"One of the best IOS - Android Mobile app development company in India","background": "bluetogreengradient"
   },
   {
-    "id":2,"logoicon":webappdevelopment, "title":"Web Application’s","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":2,"logoicon":webappdevelopment, "title":"Web Application’s","content":"One of the best IOS - Android Mobile app development company in India","background":"greentobluegradient"
   },
   {
-    "id":3,"logoicon":ux, "title":"Web UI/UX Designs","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":3,"logoicon":ux, "title":"Web UI/UX Designs","content":"One of the best IOS - Android Mobile app development company in India","background":"greentobluegradient"
   },
   {
-    "id":4,"logoicon":digitalmarketing, "title":"Digital Marketing, SEO","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":4,"logoicon":digitalmarketing, "title":"Digital Marketing, SEO","content":"One of the best IOS - Android Mobile app development company in India","background": "bluetogreengradient"
   },
   {
-    "id":5,"logoicon":socialmedia, "title":"Social Media Marketing","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":5,"logoicon":socialmedia, "title":"Social Media Marketing","content":"One of the best IOS - Android Mobile app development company in India","background": "bluetogreengradient"
   },
   {
-    "id":6,"logoicon":cloudserver, "title":"Cloud Hosting","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":6,"logoicon":cloudserver, "title":"Cloud Hosting","content":"One of the best IOS - Android Mobile app development company in India","background":"greentobluegradient"
   },
   {
-    "id":7,"logoicon":api, "title":"API Integration","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":7,"logoicon":api, "title":"API Integration","content":"One of the best IOS - Android Mobile app development company in India","background":"greentobluegradient"
   },
   {
-    "id":8,"logoicon":dataanalysis, "title":"Big Data Analysis","content":"One of the best IOS - Android Mobile app development company in India"
+    "id":8,"logoicon":dataanalysis, "title":"Big Data Analysis","content":"One of the best IOS - Android Mobile app development company in India","background": "bluetogreengradient"
   },
 ]
 
 export const Services = () => {
+
   return (
     <>
       <Navbar />
