@@ -7,8 +7,6 @@ import { Products } from "./pages/products/Products"
 import { Services } from "./pages/services/Services"
 import { Careers } from "./pages/careers/Careers"
 import { Contact } from './pages/contact/Contact'
-import CareerApply from './pages/careerApply/CareerApply'
-import SingleProduct from './pages/singleproduct/SingleProduct'
 
 
 function App() {
@@ -20,10 +18,8 @@ function App() {
         <Route path='/whoweare' element={<WhoWeAre />} />
         <Route path='/whatwedo' element={<WhatWeDo />} />
         <Route path='/products' element={<Products />} />
-        <Route path='/products/:singleProduct' element={<SingleProduct />} />
         <Route path='/services' element={<Services />} />
         <Route path='/careers' element={<Careers />} />
-        <Route path='/careerApply' element={<CareerApply />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>

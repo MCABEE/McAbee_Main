@@ -1,27 +1,6 @@
 import React from 'react'
 
-const jobOpenings = [
-    {
-        "title": "UI/UX Designer",
-        "experience&openings": "2yr experience | 01 Opening",
-        "description": "Extensive experience building modern web applications using React Javascript library (including modern features).",
-        "postedon": "12 May 2023"
-    },
-    {
-        "title": "FullStack Developer",
-        "experience&openings": "2yr experience  |  03 opening",
-        "description": "Extensive experience building modern web applications using React Javascript library (including modern features).",
-        "postedon": "12 May 2023"
-    },
-    {
-        "title": "Flutter Developer",
-        "experience&openings": "2yr experience  |  02 Opening",
-        "description": "Extensive experience building modern web applications using React Javascript library (including modern features).",
-        "postedon": "12 May 2023"
-    },
-]
-
-const CareerOpenings = ({JOBOPENINGS }) => {
+const CareerOpenings = ({JOBOPENINGS,handleApplyBtn }) => {
     
     return (
         <>
@@ -30,14 +9,13 @@ const CareerOpenings = ({JOBOPENINGS }) => {
             <div className="row gap-3">
                 {
                     JOBOPENINGS?.map((OPENING) => {
-                        console.log("openinjkg",OPENING);
                         return (
                             <div key={OPENING.jobTitle} className="col-12 col-md-5 py-4">
                                 <h6 className='fw-700'>{OPENING.jobTitle}</h6>
-                                <p className='mb-2  fw-bold ' style={{ fontSize: "0.9rem" }}>{OPENING.experience} yr experience  |  {OPENING.noOfOpenings} Opening </p>
+                                <p className='mb-2  fw-bold ' style={{ fontSize: "0.9rem" }}>{OPENING.experience} yr experience  <span className='text-muted'>|</span>  {OPENING.noOfOpenings} Opening </p>
                                 <p>{OPENING.shortDesc}</p>
                                 <p className='text-muted' style={{ fontSize: "0.9rem" }}>Posted on: {OPENING.postedOn}</p>
-                                <button className='btn btn-outline-secondary '>APPLY</button>
+                                <button className='btn btn-outline-secondary ' onClick={()=>handleApplyBtn(OPENING.jobTitle)}>APPLY</button>
                             </div>
                         )
                     })

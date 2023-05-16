@@ -11,8 +11,7 @@ import PRODUCTS from "../../../data/products"
 import { Link } from "react-router-dom";
 
 
-export default function ProductsContainer({PRODUCTS}) { 
-        console.log("prrrikkl",PRODUCTS);
+export default function ProductsContainer({PRODUCTS,handleLearnMoreBtn}) { 
     return (
         <>
                     {/*  */}
@@ -25,11 +24,11 @@ export default function ProductsContainer({PRODUCTS}) {
                             return (
                                 <div key={PRODUCT.productName} className="card productContainerCard pb-3" >
                                     <img src={PRODUCT.image} className="card-img-top" alt="..." />
-                                    <div className="card-body position-relative pt-4" >
+                                    <div className="card-body position-relative pt-4 d-flex flex-column" >
                                         <h5 className="card-title fs-5 fw-700">{PRODUCT.productName}</h5>
                                         <p className="position-absolute bg-primary px-3 text-white" style={{ top: "1.4rem", right: "0" }}>AVAILABLE</p>
                                         <p className="card-text pt-3">{PRODUCT.productTagline}</p>
-                                        <Link to={`/products/${PRODUCT.params}`}>Learn More</Link>
+                                        <button className="btn p-0 mt-auto text-primary" onClick={()=>handleLearnMoreBtn(PRODUCT.productName)} style={{width:"fit-content"}}>Learn More</button>
                                         <div className="pt-4 d-flex align-items-center">
                                             <p className="m-0">For Downloads,Check it with</p>
                                             <div className="ps-3 d-flex gap-2 storeIcons">
