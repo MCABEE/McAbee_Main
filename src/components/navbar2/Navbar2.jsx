@@ -18,7 +18,7 @@ export const Navbar2 = () => {
           animate={{ opacity: 1, x: 1 }}
           transition={{ delay: 1.5, duration: 1 }} 
           >
-          <Link to="" className='text-black ' style={{fontSize:"1.5rem"}}>MCABEE</Link>
+          <Link to="/" className='text-black ' style={{fontSize:"1.5rem"}}>MCABEE</Link>
         </motion.div>
         <div >
           <motion.label initial={{ opacity: 0, x: "50vw" }}

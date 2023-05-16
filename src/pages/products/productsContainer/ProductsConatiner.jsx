@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 
-
 import { FaGooglePlay } from "react-icons/fa"
 import { BsApple } from "react-icons/bs"
 
@@ -12,17 +11,16 @@ import PRODUCTS from "../../../data/products"
 import { Link } from "react-router-dom";
 
 
-export default function ProductsContainer() {
-
+export default function ProductsContainer({PRODUCTS}) { 
+        console.log("prrrikkl",PRODUCTS);
     return (
         <>
-            <div className=' pt-5 pb-3 border-top'>
-                <div className="d-flex flex-column flex-lg-row gap-3 justify-content-between">
                     {/*  */}
                     {/* Product Card Start here */}
                     {/* Product Card Start here */}
                     {/* Product Card Start here */}
                     {
+                        
                         PRODUCTS.map((PRODUCT) => {
                             return (
                                 <div key={PRODUCT.productName} className="card productContainerCard pb-3" >
@@ -47,8 +45,6 @@ export default function ProductsContainer() {
 
                     {/*  */}
                     {/* Product cardv ends here */}
-                </div>
-            </div>
 
         </>
 

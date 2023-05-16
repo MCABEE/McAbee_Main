@@ -10,6 +10,11 @@ import { BsArrowLeft } from "react-icons/bs"
 import { Link } from 'react-router-dom'
 import HeroSection2 from '../../components/herosection2/HeroSection2'
 
+const heroSection2={
+    "title":"CAREER",
+    "tagline":"Discover Your New Career",
+    "shortDesc1":"Mcabee needs more creative people and technologists. Search open roles for designers, developers, analysts and more. Mcabee careers start right here - including yours.Kickstart your journey today."
+  }
 
 const CareerApply = () => {
     return (
@@ -18,7 +23,7 @@ const CareerApply = () => {
                 <Navbar2 />
             </div>
             <div className='container'>
-                <HeroSection2 />
+                <HeroSection2 data={heroSection2}/>
                 <div className=' pt-2 pb-2 border-top border-bottom '>
 
                     <p className='m-0'>
