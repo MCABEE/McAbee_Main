@@ -21,19 +21,22 @@ const jobOpenings = [
     },
 ]
 
-const CareerOpenings = () => {
+const CareerOpenings = ({JOBOPENINGS }) => {
+    
     return (
-        <div className=' pt-4 pb-3 border-top'>
+        <>
+            { <div className=' pt-4 pb-3 border-top'>
             <h4 className='fw-700 fs-3 pt-2 pb-0 text-center text-lg-start'>14 Openings</h4>
             <div className="row gap-3">
                 {
-                    jobOpenings?.map((opening) => {
+                    JOBOPENINGS?.map((OPENING) => {
+                        console.log("openinjkg",OPENING);
                         return (
-                            <div key={opening.title} className="col-12 col-md-5 py-4">
-                                <h6 className='fw-700'>{opening.title}</h6>
-                                <p className='mb-2  fw-bold ' style={{ fontSize: "0.9rem" }}>{opening['experience&openings']} </p>
-                                <p>{opening.description}</p>
-                                <p className='text-muted' style={{ fontSize: "0.9rem" }}>Posted on: {opening.postedon}</p>
+                            <div key={OPENING.jobTitle} className="col-12 col-md-5 py-4">
+                                <h6 className='fw-700'>{OPENING.jobTitle}</h6>
+                                <p className='mb-2  fw-bold ' style={{ fontSize: "0.9rem" }}>{OPENING.experience} yr experience  |  {OPENING.noOfOpenings} Opening </p>
+                                <p>{OPENING.shortDesc}</p>
+                                <p className='text-muted' style={{ fontSize: "0.9rem" }}>Posted on: {OPENING.postedOn}</p>
                                 <button className='btn btn-outline-secondary '>APPLY</button>
                             </div>
                         )
@@ -42,7 +45,8 @@ const CareerOpenings = () => {
 
 
             </div>
-        </div>
+        </div>}
+        </>
     )
 }
 

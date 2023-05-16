@@ -18,6 +18,8 @@ export const Careers = () => {
 
   const careerList = JOBOPENINGS.map((OPENING) => OPENING.jobTitle)
 
+  const SelectedOpening = JOBOPENINGS.filter((OPENING)=>filterOpening === OPENING.jobTitle)
+
   const heroSection2 = {
     "title": "CAREER",
     "tagline": "Discover Your New Career",
@@ -33,7 +35,10 @@ export const Careers = () => {
       </div>
       <div className='container'>
         <HeroSection2 data={heroSection2} setfilter={setfilterOpening} />
-        <CareerOpenings />
+        {
+          filterOpening==="All"?<CareerOpenings JOBOPENINGS={JOBOPENINGS} />:<CareerOpenings JOBOPENINGS={SelectedOpening}/>
+        }
+        
         <CareerAttention />
       </div>
 
