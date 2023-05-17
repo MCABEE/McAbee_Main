@@ -3,8 +3,8 @@ const JOBOPENINGS = [
     {
         "jobTitle": "UI/UX Designer",
         "params": "UI_UX_Designer",
-        "experience": "02",
-        "noOfOpenings": "01",
+        "experience": 2,
+        "noOfOpenings": 1,
         "shortDesc": "Extensive experience building modern web applications using React Javascript library (including modern features).",
         "postedOn": "12 May 2023",
         "location":"Chennai",
@@ -17,8 +17,8 @@ const JOBOPENINGS = [
     {
         "jobTitle": "FullStack Developer",
         "params": "FullStackDeveloper",
-        "experience": "02",
-        "noOfOpenings": "03",
+        "experience": 2,
+        "noOfOpenings": 3,
         "shortDesc": "Extensive experience building modern web applications using React Javascript library (including modern features).",
         "postedOn": "12 May 2023",
         "location":"Chennai",
@@ -31,8 +31,8 @@ const JOBOPENINGS = [
     {
         "jobTitle": "Flutter Developer",
         "params": "FlutterDeveloper",
-        "experience": "02",
-        "noOfOpenings": "02",
+        "experience": 2,
+        "noOfOpenings": 2,
         "shortDesc": "Extensive experience building modern web applications using React Javascript library (including modern features).",
         "postedOn": "12 May 2023",
         "location":"Chennai",
