@@ -7,7 +7,7 @@ const CareerOpenings = ({ JOBOPENINGS, handleApplyBtn }) => {
     return (
         <>
             {<div className=' pt-4 pb-3 border-top'>
-                <h4 className='fw-700 fs-3 pt-2 pb-0 text-center text-lg-start'>0{calculateTotalOpenings()} Openings</h4>
+                <h4 className='fw-700 fs-3 pt-2 pb-0  text-start'>0{calculateTotalOpenings()} Openings</h4>
                 <div className="row gap-3">
                     {
                         JOBOPENINGS?.map((OPENING) => {

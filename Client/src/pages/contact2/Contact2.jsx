@@ -69,7 +69,7 @@ const Contact2 = () => {
                         <div className='contact-page-details-content2 pt-5 pb-2'>
                             <h5 className='mb-4 fw-700'>Find a location</h5>
                             <div className='d-flex flex-column flex-lg-row'>
-                                <div className='col col-lg-4 '>
+                                <div className='col col-lg-4 pb-4'>
                                     <h6 className='fw-700 m-0 py-2 border-top border-bottom'>INDIA</h6>
                                     <div className='d-flex flex-row pt-4'>
                                         <div className='fw-700 col-4'>Chennai</div>
