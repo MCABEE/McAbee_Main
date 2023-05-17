@@ -15,7 +15,7 @@ const HeroSection2 = ({data,setfilter,filter,diplayListOption}) => {
         </div>
         <div className='w-100 w-lg-50 d-flex gap-2 border rounded' style={{ height: "2.5rem" }}>
           <select className="form-select h-100 border-0 " value={filter} onChange={(e)=>setfilter(e.target.value)} aria-label="Default select example" style={{ width: "fit-content" }}>
-              <option value="All" disabled={diplayListOption?false:true}>{data.title==="PRODUCTS"?"PRODUCTS":"All Openings"}</option>
+              <option value="All" disabled={diplayListOption?false:true}>{data.title==="PRODUCTS"?"PRODUCTS":data.title==="CAREER"?"All Openings":"Region"}</option>
             {
               data.List.map((item)=>{
                 return <option key={item} value={item}>{item}</option>

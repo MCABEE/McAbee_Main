@@ -6,7 +6,7 @@ import { WhatWeDo } from './pages/whatwedo/WhatWeDo'
 import { Products } from "./pages/products/Products"
 import { Services } from "./pages/services/Services"
 import { Careers } from "./pages/careers/Careers"
-import { Contact } from './pages/contact/Contact'
+import  Contact2  from './pages/contact2/Contact2'
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path='/products' element={<Products />} />
         <Route path='/services' element={<Services />} />
         <Route path='/careers' element={<Careers />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Contact2 />} />
       </Routes>
     </BrowserRouter>
   )
