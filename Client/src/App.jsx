@@ -2,7 +2,6 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import  Home2 from './pages/home2/Home2'
 import  WhoWeAre2  from './pages/whoweare2/WhoWeAre2'
-import { WhatWeDo } from './pages/whatwedo/WhatWeDo'
 import { Products } from "./pages/products/Products"
 import Services2 from "./pages/services2/Services2"
 import { Careers } from "./pages/careers/Careers"
@@ -16,7 +15,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home2 />} />
         <Route path='/whoweare' element={<WhoWeAre2 />} />
-        <Route path='/whatwedo' element={<WhatWeDo />} />
         <Route path='/products' element={<Products />} />
         <Route path='/services' element={<Services2 />} />
         <Route path='/careers' element={<Careers />} />

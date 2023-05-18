@@ -4,7 +4,8 @@ import { HeroSection } from '../../components/heroSection/HeroSection'
 import { Navbar2 } from '../../components/navbar2/Navbar2'
 import { BsArrowRight } from "react-icons/bs"
 import "./home2.scss"
-
+import ProductCarousel2 from './productCarousel2/ProductCarousel2'
+import PRODUCTS from '../../data/products'
 
 
 let herosectionData = {
@@ -33,6 +34,7 @@ const Home2 = () => {
                 </div>
                 <button className='btn btn-outline-secondary mt-3 ms-4'>Know More</button>
                 {/* carousel  */}
+                <ProductCarousel2/>
                 <div className='text-end' >
                     <h5 className='fw-700 pb-2'>PRODUCTS</h5>
                     <h3 className='fw-700 pb-2'>We have the Team, technology and Tenacity</h3>
@@ -41,7 +43,7 @@ const Home2 = () => {
                         <p>Our products creates a foundation for future retail that transcends the boundaries of channels and touchpoints. Today’s customers want to shop on their terms. They expect a consistent experience across touchpoints: in-store, online, or mobile. With each channel having its own data, processes, and context, managing multiple capabilities has become extremely complex.</p>
                     </div>
                 </div>
-                <div className='d-flex flex-column flex-md-row justify-content-between'>
+                <div className='d-flex gap-4 pt-5 pb-3 mt-3 flex-column flex-md-row justify-content-between'>
                     <div className='text-start'>
                         <h5 className='fw-700'>Mobile App Development</h5>
                         <p>Extensive experience building modern web applications using React Javascript library (including modern features).</p>
@@ -59,7 +61,7 @@ const Home2 = () => {
                 <div className='d-flex justify-content-center'>
                     <button className='btn btn-outline-secondary'>Know More</button>
                 </div>
-                <div className='d-flex flex-column flex-lg-row justify-content-between align-items-center'>
+                <div className='d-flex flex-column py-5 my-3 flex-lg-row justify-content-between align-items-center'>
                     <div className=' py-4 col col-lg-6'>
                         <h5 className='fw-700 pb-2'>CAREER</h5>
                         <h3 className='fw-700 pb-2'>Discover your New Career</h3>
@@ -79,7 +81,7 @@ const Home2 = () => {
 
                     </div>
                 </div>
-                <div  >
+                <div className='pb-4' >
                     <h5 className='fw-700 pb-2'>PRODUCTS</h5>
                             <h3 className='fw-700 pb-2'>We have the Team, technology and Tenacity</h3>
                     <div className='d-flex flex-column-reverse flex-lg-row align-items-center justify-content-between'>
@@ -96,6 +98,7 @@ const Home2 = () => {
                             <p className='border-bottom'>Future</p>
                         </div>
                     </div>
+                    <button className='btn btn-outline-secondary mt-3 ms-4'>Know More</button>
 
                 </div>
 
