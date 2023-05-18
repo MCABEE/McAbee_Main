@@ -24,8 +24,10 @@ const Services2 = () => {
         const formData = new FormData(e.currentTarget);
 
         const data = Object.fromEntries(formData);
-
-        const res = await SendResume(data)
+        data.customField = 'Custom Value';
+     
+        console.log("datah",data);
+       // const res = await SendResume(data)
         setsuccessmsg(true)
         // Reset the form values
         formRef.current.reset();
@@ -60,7 +62,7 @@ const Services2 = () => {
                     <form onSubmit={handleSubmit} ref={formRef} className="collapse" id="careeropeningApplyCollapse-formopenclose">
                         <div className='d-flex flex-column gap-4 pt-3'>
                             {/* select service */}
-                            <select className="form-select" aria-label="Default select example">
+                            <select className="form-select" name='Selecval' aria-label="Default select example">
                                 <option value={"no_service_selected"}>Select Service</option>
                                 <option value="Mobile_App_Development">Mobile App Development</option>
                                 <option value="Web_Application_Development">Web Application Development</option>
@@ -72,7 +74,7 @@ const Services2 = () => {
                             {/* Name input */}
                             <input type="text" name='name' className="form-control" placeholder="Full Name (of Authorized Person)" />
                             {/* Address input */}
-                            <input type="text" name='address' className="form-control" placeholder="Company Name" />
+                            <input type="text" name='company_name' className="form-control" placeholder="Company Name" />
                             {/* email input */}
                             <input type="text" name='email' className="form-control" placeholder="Email-id" />
                             {/* Mobile input */}
