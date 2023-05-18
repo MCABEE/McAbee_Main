@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/home/Home'
+import  Home2 from './pages/home2/Home2'
 import  WhoWeAre2  from './pages/whoweare2/WhoWeAre2'
 import { WhatWeDo } from './pages/whatwedo/WhatWeDo'
 import { Products } from "./pages/products/Products"
@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home2 />} />
         <Route path='/whoweare' element={<WhoWeAre2 />} />
         <Route path='/whatwedo' element={<WhatWeDo />} />
         <Route path='/products' element={<Products />} />
