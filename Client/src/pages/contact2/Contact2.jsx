@@ -7,6 +7,7 @@ import "./contact2.scss"
 const Contact2 = () => {
     const [filterRegion, setfilterRegion] = useState("All")//changes the selection menu in the herosection 2
     const [displaySelectMenu, setdisplaySelectMenu] = useState(true)
+    const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
     const [renderContactPage, setrenderContactPage] = useState(false) //tell which component to render (job openings or job apply component)
 
     const regionList = ["India", "Europe", "Australia-NZ", "US-Canada", "Middle East"] //sets the list option for herosection2 which is going as object prop 
@@ -30,7 +31,7 @@ const Contact2 = () => {
                 <Navbar2 />
             </div>
             <div className='container'>
-                <HeroSection2 data={contactSection2} filter={filterRegion} setfilter={setfilterRegion} diplayListOption={setrenderContactPage} displaySelectMenu={displaySelectMenu}/>
+                <HeroSection2 data={contactSection2} filter={filterRegion} setfilter={setfilterRegion} diplayListOption={setrenderContactPage} displaySelectMenu={displaySelectMenu} displaySearchFilter={displaySearchFilter}/>
 
                 <div className='contact-page-details-content2 pt-5 pb-3 border-top'>
                     <div>

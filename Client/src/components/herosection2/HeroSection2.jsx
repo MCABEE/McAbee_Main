@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 //react icon import 
 import { BiSearchAlt2 } from "react-icons/bi"
 
-const HeroSection2 = ({ data, setfilter, filter, diplayListOption, displaySelectMenu }) => {
+const HeroSection2 = ({ data, setfilter, filter, diplayListOption, displaySelectMenu, displaySearchFilter }) => {
 
   return (
     <div className='pt-5 pb-4'>
@@ -13,7 +13,7 @@ const HeroSection2 = ({ data, setfilter, filter, diplayListOption, displaySelect
         <div className='w-100 w-lg-75 text-muted'>
           {data.shortDesc1}
         </div>
-        <div className='w-100 w-lg-25 d-flex gap-2 border rounded' style={{ height: "2.5rem" }}>
+        <div className={`w-100 w-lg-25 d-flex gap-2 ${!displaySelectMenu && !displaySearchFilter?"":"border"} rounded`} style={{ height: "2.5rem" }}>
           {
             displaySelectMenu
               ? (
@@ -28,11 +28,16 @@ const HeroSection2 = ({ data, setfilter, filter, diplayListOption, displaySelect
               ) : ""
 
           }
+          {
+            displaySearchFilter
+              ? (
+                <div className="input-group mb-3 border-0">
+                  <span className="input-group-text border-0" id="basic-addon1"><BiSearchAlt2 /> </span>
+                  <input type="text" className="form-control border-0" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" />
+                </div>
+              ) : ""
+          }
 
-          <div className="input-group mb-3 border-0">
-            <span className="input-group-text border-0" id="basic-addon1"><BiSearchAlt2 /> </span>
-            <input type="text" className="form-control border-0" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" />
-          </div>
         </div>
       </div>
     </div>

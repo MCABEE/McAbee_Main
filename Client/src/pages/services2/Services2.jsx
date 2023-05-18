@@ -8,7 +8,7 @@ const Services2 = () => {
 
     const [filterservice, setfilterservice] = useState("All")//changes the selection menu in the herosection 2
     const [displaySelectMenu, setdisplaySelectMenu] = useState(false)
-
+    const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
     const [renderServicePage, setrenderServicePage] = useState(false) //tell which component to render (job openings or job apply component)
     const [formOpen, setformOpen] = useState(false)
     const [successmsg, setsuccessmsg] = useState(false)
@@ -44,7 +44,7 @@ const Services2 = () => {
                 <Navbar2 />
             </div>
             <div className='container'>
-                <HeroSection2 data={serviceSection2} filter={filterservice} setfilter={setfilterservice} diplayListOption={renderServicePage} displaySelectMenu={displaySelectMenu} />
+                <HeroSection2 data={serviceSection2} filter={filterservice} setfilter={setfilterservice} diplayListOption={renderServicePage} displaySelectMenu={displaySelectMenu} displaySearchFilter={displaySearchFilter}/>
                 <div className=' pt-4 pb-5 border-top'>
                     {
                         renderServicePage ? (
