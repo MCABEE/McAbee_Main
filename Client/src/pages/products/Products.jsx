@@ -13,6 +13,7 @@ import SingleProductComponent from './singleproductComponent/SingleProductCompon
 export const Products = () => {
 
   const [filterProduct, setfilterProduct] = useState("All")//changes the selection menu in the herosection 2
+  const [displaySelectMenu, setdisplaySelectMenu] = useState(true)
   const [renderProductPage, setrenderProductPage] = useState(true) //tell which component to render (job openings or job apply component)
 
   const productList = PRODUCTS.map((PRODUCT) => PRODUCT.productName) //sets the list option for herosection2 which is going as object prop 
@@ -37,7 +38,7 @@ export const Products = () => {
         <Navbar2 />
       </div>
       <div className='container'>
-        <HeroSection2 data={productSection2} filter={filterProduct} setfilter={setfilterProduct}  diplayListOption={renderProductPage} />
+        <HeroSection2 data={productSection2} filter={filterProduct} setfilter={setfilterProduct}  diplayListOption={renderProductPage} displaySelectMenu={displaySelectMenu}/>
         {
           renderProductPage
             ? (

@@ -4,7 +4,7 @@ import { Home } from './pages/home/Home'
 import { WhoWeAre } from './pages/whoweare/WhoWeAre'
 import { WhatWeDo } from './pages/whatwedo/WhatWeDo'
 import { Products } from "./pages/products/Products"
-import { Services } from "./pages/services/Services"
+import  Services2  from "./pages/services2/Services2"
 import { Careers } from "./pages/careers/Careers"
 import  Contact2  from './pages/contact2/Contact2'
 
@@ -18,7 +18,7 @@ function App() {
         <Route path='/whoweare' element={<WhoWeAre />} />
         <Route path='/whatwedo' element={<WhatWeDo />} />
         <Route path='/products' element={<Products />} />
-        <Route path='/services' element={<Services />} />
+        <Route path='/services' element={<Services2 />} />
         <Route path='/careers' element={<Careers />} />
         <Route path='/contact' element={<Contact2 />} />
       </Routes>

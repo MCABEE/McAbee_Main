@@ -21,6 +21,7 @@ import { BsArrowLeft } from "react-icons/bs"
 export const Careers = () => {
 
   const [filterOpening, setfilterOpening] = useState("All")   //changes the selection menu in the herosection 2
+  const [displaySelectMenu, setdisplaySelectMenu] = useState(true)
   const [renderCareerPage, setrenderCareerPage] = useState(true) //tell which component to render (job openings or job apply component)
 
   const careerList = JOBOPENINGS.map((OPENING) => OPENING.jobTitle)  //sets the list option for herosection2 which is going as object prop 
@@ -47,7 +48,7 @@ export const Careers = () => {
       </div>
 
       <div className='container'>
-        <HeroSection2 data={heroSection2} filter={filterOpening} setfilter={setfilterOpening} diplayListOption={renderCareerPage}/>
+        <HeroSection2 data={heroSection2} filter={filterOpening} setfilter={setfilterOpening} diplayListOption={renderCareerPage} displaySelectMenu={displaySelectMenu}/>
         {
           renderCareerPage ? (
             <>
