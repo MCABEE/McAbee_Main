@@ -53,13 +53,14 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
                 </ul>
                 <p className='fw-bold'>Job Location : {JOBOPENINGS.location}</p>
                 <div className='col col-md-8 col-lg-6 '>
-                    <div className='d-flex justify-content-between'>
-                        <p className='fw-700 '>Apply</p>
-                        <p>
-                            <a className='text-dark' data-bs-toggle="collapse" onClick={() => setformOpen(!formOpen)} href="#careeropeningApplyCollapse-formopenclose" aria-expanded="false">
+                    <a href="#careeropeningApplyCollapse-formopenclose" className='text-dark' onClick={() => setformOpen(!formOpen)} data-bs-toggle="collapse" aria-expanded="false">
+                        <div className='d-flex justify-content-between'>
+                            <p className='fw-700 '>Apply</p>
+                            <p>
                                 {formOpen ? "Close" : "Open"}
-                            </a></p>
-                    </div>
+                            </p>
+                        </div>
+                    </a>
                     <form onSubmit={handleSubmit} ref={formRef} className="collapse" id="careeropeningApplyCollapse-formopenclose">
                         <div className='d-flex flex-column gap-4 pt-3'>
                             {/* Name input */}
