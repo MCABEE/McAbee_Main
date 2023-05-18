@@ -1,9 +1,9 @@
 import React from 'react'
 import "./productCarousel2.scss"
 import { RiGooglePlayFill } from "react-icons/ri"
-import { BsApple } from "react-icons/bs"
-import { BsArrowRightShort } from "react-icons/bs"
+import { BsApple  } from "react-icons/bs"
 import PRODUCTS from '../../../data/products'
+import {Link} from "react-router-dom"
 
 
 const ProductCarousel2 = () => {
@@ -24,12 +24,12 @@ const ProductCarousel2 = () => {
                                             </div>
                                             <div className='mx-5'>
                                                 <p className="card-text pb-3 m-0">{PRODUCTS[0].productTagline}</p>
-                                                <a href="#" >Learn More</a>
+                                                <Link to={`/products/${PRODUCTS[0].params}`} >Learn More</Link>
                                                 <div className='d-flex mt-4 justify-content-between align-items-center'>
                                                     <p className='m-0'>For Downloads, Check it with</p>
                                                     <div className=' d-flex gap-2'>
-                                                        <RiGooglePlayFill size={35} />
-                                                        <BsApple size={30} />
+                                                        <RiGooglePlayFill className="pc-bs-apple"  size={35} />
+                                                        <BsApple className="pc-googleplay" size={30} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -45,12 +45,12 @@ const ProductCarousel2 = () => {
                                             </div>
                                             <div className='mx-5'>
                                                 <p className="card-text pb-3 m-0">{PRODUCTS[1].productTagline}</p>
-                                                <a href="#" >Learn More</a>
+                                                <Link to={`/products/${PRODUCTS[1].params}`} >Learn More</Link>
                                                 <div className='d-flex mt-4 justify-content-between align-items-center'>
                                                     <p className='m-0'>For Downloads, Check it with</p>
                                                     <div className=' d-flex gap-2'>
-                                                        <RiGooglePlayFill size={35} />
-                                                        <BsApple size={30} />
+                                                        <RiGooglePlayFill className="pc-bs-apple" size={35} />
+                                                        <BsApple className="pc-googleplay" size={30} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,12 +73,12 @@ const ProductCarousel2 = () => {
                                             </div>
                                             <div className='mx-5'>
                                                 <p className="card-text pb-3 m-0">{PRODUCTS[1].productTagline}</p>
-                                                <a href="#" >Learn More</a>
+                                                <Link to={`/products/${PRODUCTS[1].params}`} >Learn More</Link>
                                                 <div className='d-flex mt-4 justify-content-between align-items-center'>
                                                     <p className='m-0'>For Downloads, Check it with</p>
                                                     <div className=' d-flex gap-2'>
-                                                        <RiGooglePlayFill size={35} />
-                                                        <BsApple size={30} />
+                                                        <RiGooglePlayFill className="pc-bs-apple" size={35} />
+                                                        <BsApple className="pc-googleplay" size={30} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,12 +94,12 @@ const ProductCarousel2 = () => {
                                             </div>
                                             <div className='mx-5'>
                                                 <p className="card-text pb-3 m-0">{PRODUCTS[2].productTagline}</p>
-                                                <a href="#" >Learn More</a>
+                                                <Link to={`/products/${PRODUCTS[2].params}`} >Learn More</Link>
                                                 <div className='d-flex mt-4 justify-content-between align-items-center'>
                                                     <p className='m-0'>For Downloads, Check it with</p>
                                                     <div className=' d-flex gap-2'>
-                                                        <RiGooglePlayFill size={35} />
-                                                        <BsApple size={30} />
+                                                        <RiGooglePlayFill className="pc-bs-apple" size={35} />
+                                                        <BsApple className="pc-googleplay" size={30} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,12 +123,12 @@ const ProductCarousel2 = () => {
                                             </div>
                                             <div className='mx-5'>
                                                 <p className="card-text pb-3 m-0">{PRODUCTS[2].productTagline}</p>
-                                                <a href="#" >Learn More</a>
+                                                <Link to={`/products/${PRODUCTS[2].params}`} >Learn More</Link>
                                                 <div className='d-flex mt-4 justify-content-between align-items-center'>
                                                     <p className='m-0'>For Downloads, Check it with</p>
                                                     <div className=' d-flex gap-2'>
-                                                        <RiGooglePlayFill size={35} />
-                                                        <BsApple size={30} />
+                                                        <RiGooglePlayFill className="pc-bs-apple" size={35} />
+                                                        <BsApple className="pc-googleplay" size={30} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,12 +144,12 @@ const ProductCarousel2 = () => {
                                             </div>
                                             <div className='mx-5'>
                                                 <p className="card-text pb-3 m-0">{PRODUCTS[0].productTagline}</p>
-                                                <a href="#" >Learn More</a>
+                                                <Link to={`/products/${PRODUCTS[0].params}`} >Learn More</Link>
                                                 <div className='d-flex mt-4 justify-content-between align-items-center'>
                                                     <p className='m-0'>For Downloads, Check it with</p>
                                                     <div className=' d-flex gap-2'>
-                                                        <RiGooglePlayFill size={35} />
-                                                        <BsApple size={30} />
+                                                        <RiGooglePlayFill className="pc-bs-apple" size={35} />
+                                                        <BsApple className="pc-googleplay" size={30} />
                                                     </div>
                                                 </div>
                                             </div>

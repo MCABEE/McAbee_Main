@@ -9,7 +9,7 @@ import "./singleProductComponent.scss"
 import productImg from "../../../assets/homeassets/firstlookproductimg.png"
 
 const SingleProductComponent = ({data}) => {
-    const PRODUCT = data[0]
+    const PRODUCT = data
     return (
         <div className='SingleProductComponent d-flex pt-5  flex-column flex-md-row ' >
             <div className='SingleProductComponent-left border'>

@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const CareerOpenings = ({ JOBOPENINGS, handleApplyBtn }) => {
+const CareerOpenings = ({ JOBOPENINGS }) => {
     const calculateTotalOpenings = () => {
         return JOBOPENINGS.reduce((accumulator, current) => accumulator + (current.noOfOpenings), 0);
     }
@@ -17,7 +18,7 @@ const CareerOpenings = ({ JOBOPENINGS, handleApplyBtn }) => {
                                     <p className='mb-2  fw-bold ' style={{ fontSize: "0.9rem" }}>0{OPENING.experience} yr experience  <span className='text-muted'>|</span>  0{OPENING.noOfOpenings} Opening </p>
                                     <p>{OPENING.shortDesc}</p>
                                     <p className='text-muted' style={{ fontSize: "0.9rem" }}>Posted on: {OPENING.postedOn}</p>
-                                    <button className='btn btn-outline-secondary ' onClick={() => handleApplyBtn(OPENING.jobTitle)}>APPLY</button>
+                                    <Link to={`/careers/${OPENING.params}`}><button className='btn btn-outline-secondary' >APPLY</button></Link>
                                 </div>
                             )
                         })

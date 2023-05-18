@@ -1,21 +1,16 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 //import Components
 import { Navbar2 } from '../../components/navbar2/Navbar2'
 import { Footer2 } from '../../components/footer2/Footer2'
 import CareerOpenings from './openings/CareerOpenings'
 import CareerAttention from './careerAttention.jsx/CareerAttention'
 import HeroSection2 from '../../components/herosection2/HeroSection2'
-import CareerOpeningApply from './careeropeningApply/CareerOpeningApply'
 
 //import styles
 import "./careers.scss"
 
 // import data
 import JOBOPENINGS from '../../data/jobOpenings'
-
-//import react iceons
-import { BsArrowLeft } from "react-icons/bs"
 
 
 export const Careers = () => {
@@ -36,11 +31,6 @@ export const Careers = () => {
     "List": careerList
   }
 
-  const handleApplyBtn=(jobtitle)=>{
-    setrenderCareerPage(!renderCareerPage)
-    setfilterOpening(jobtitle)
-  }
-
 
   return (
     <div className='careers-page-wrapper pb-3'>
@@ -49,35 +39,17 @@ export const Careers = () => {
       </div>
 
       <div className='container'>
-        <HeroSection2 data={heroSection2} filter={filterOpening} setfilter={setfilterOpening} diplayListOption={renderCareerPage} displaySelectMenu={displaySelectMenu} displaySearchFilter={displaySearchFilter}/>
+        <HeroSection2 data={heroSection2} filter={filterOpening} setfilter={setfilterOpening} diplayListOption={renderCareerPage} displaySelectMenu={displaySelectMenu} displaySearchFilter={displaySearchFilter} />
+
+
         {
-          renderCareerPage ? (
-            <>
-              {
-                filterOpening === "All"
-                 ? <CareerOpenings JOBOPENINGS={JOBOPENINGS} handleApplyBtn={handleApplyBtn}/> 
-                 : <CareerOpenings JOBOPENINGS={SelectedOpening} handleApplyBtn={handleApplyBtn}/>
-              }
-              <CareerAttention />
-            </>
-          ) : (
-            <>
-              <div className=' pt-2 pb-2 border-top border-bottom '>
-
-                <div className='m-0'>
-                  <div className='text-dark' style={{cursor:'pointer'}} onClick={()=>{setrenderCareerPage(!renderCareerPage);setfilterOpening("All")}}>
-                    <BsArrowLeft size={25} />
-                    <span className='ps-3'>Back to Careers</span>
-                  </div>
-                </div>
-
-              </div>
-              {
-                <CareerOpeningApply  JOBOPENINGS={SelectedOpening[0]}/>
-              }
-            </>
-          )
+          filterOpening === "All"
+            ? <CareerOpenings JOBOPENINGS={JOBOPENINGS} />
+            : <CareerOpenings JOBOPENINGS={SelectedOpening} />
         }
+        <CareerAttention />
+
+
 
       </div>
 
