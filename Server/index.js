@@ -1,95 +1,181 @@
-const express = require("express")
-const router = express.Router();
-const cors = require('cors');
-const multer = require('multer')
-const nodemailer = require("nodemailer");
-const Mailgen = require('mailgen');
+import express from "express";
+import cors from "cors";
+import configureMulter from "./controller/multer.js"
+import nodemailer from "nodemailer"
+import Mailgen from "mailgen"
+import routes from "./routes/route.js"
+import dotenv from 'dotenv';
 
-require('dotenv').config();
+dotenv.config();
 
 const EMAIL = process.env.EMAIL
 const PASSWORD = process.env.PASSWORD
 const PORT = process.env.PORT
 
-const app = express()
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+const upload = configureMulter();
 
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
 
+// app.use("/",routes)
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        return cb(null, './uploads') // specify the destination folder for uploaded files
-    },
-    filename: function (req, file, cb) {
-        return cb(null, `${Date.now()}-${file.originalname}`) // use the original filename for the uploaded file
-    }
-})
-const upload = multer({ storage: storage })
+ app.post("/SendResume", upload.single("resume"), async (req, res) => {
+    try {
+        const { name, mobile, address, email, jobtitle } = req.body;
+        const resume = req.file;
 
-// send mail from real gmail accnt
-app.post("/sendEmail", upload.single("resume"), async (req, res) => {
-    console.log(req.body);
-    console.log(req.file);
-    let config = {
-        service: 'gmail',
-        auth: {
-            user: EMAIL,
-            pass: PASSWORD
+        let config = {
+            service: 'gmail',
+            auth: {
+                user: EMAIL,
+                pass: PASSWORD
+            }
         }
+        let transporter = nodemailer.createTransport(config);
+
+        let MailGenerator = new Mailgen({
+            theme: "default",
+            product: {
+                name: "Mailgen",
+                link: 'https://mailgen.js/'
+            }
+        })
+        let response = {
+            body: {
+                name: `${name} Applied for the role of ${jobtitle}`,
+                intro: "",
+                table: {
+                    data: [
+                        {
+                            Name: name,
+                            jobtitle: jobtitle,
+                            email: email,
+                            mobile: mobile,
+                            address: address
+                        }
+                    ]
+                },
+            }
+        }
+
+        let mail = MailGenerator.generate(response)
+        console.log("resume", resume.filename);
+        let message = {
+            from: EMAIL,
+            to: "iniyini35@gmail.com", //change the email
+            subject: "Business Enquiry through MCABEE website.",
+            html: mail,
+            attachments:
+            {
+                filename: resume.filename,
+                path: req.file.path
+            }
+        }
+
+        transporter.sendMail(message, (error, info) => {
+            if (error) {
+                console.log(error);
+                // handle the error if needed
+            } else {
+
+                console.log(info);
+                // handle the success if needed
+            }
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.json({ status: false, error: error.message });
     }
 
-    let transporter = nodemailer.createTransport(config);
+});
 
-    let MailGenerator = new Mailgen({
-        theme: "default",
-        product: {
-            name: "Mailgen",
-            link: 'https://mailgen.js/'
+app.post("/SendEnquiry",upload.single("document"),async(req,res)=>{
+    try {
+        const { ServiceSelected, name, company_name, mobile,clientRequirement } = req.body;
+        const document=req.file;
+        let config = {
+            service: 'gmail',
+            auth: {
+                user: EMAIL,
+                pass: PASSWORD
+            }
         }
-    })
+        let transporter = nodemailer.createTransport(config);
 
-    let response = {
-        body: {
-            name: `I am ${req.body.name}`,
-            intro: "",
-            table: {
-                data: [
-                    {
-                        Name: req.body.name,
-                        mobile: req.body.mobile,
-                        address: req.body.address,
-                        email: req.body.email
-                    }
-                ]
-            },
+        let MailGenerator = new Mailgen({
+            theme: "default",
+            product: {
+                name: "Mailgen",
+                link: 'https://mailgen.js/'
+            }
+        })
+        let response = {
+            body: {
+                name: `${ServiceSelected} Enquiry From ${name}`,
+                intro: "",
+                table: {
+                    data: [
+                        {
+
+                            Name: name,
+                            Company_Name: company_name,
+                            ServiceSelected: ServiceSelected,
+                            mobile: mobile,
+                            clientRequirement: clientRequirement
+                        }
+                    ]
+                },
+            }
         }
-    }
 
-    let mail = MailGenerator.generate(response)
 
-    let message = {
-        from: EMAIL,
-        to: "iniyini35@gmail.com", //change the email
-        subject: "Job Application through MCABEE website.",
-        html: mail,
-        attachments: {
-            filename: req.file.filename,
-            path: req.file.path
+        let mail = MailGenerator.generate(response)
+
+        let message = {
+            from: EMAIL,
+            to: "iniyini35@gmail.com", //change the email
+            subject: "Business Enquiry through MCABEE website.",
+            html: mail,
+            
         }
-    }
-
-     transporter.sendMail(message, (error, info) => {
-        if (error) {
-            res.json({status:false,error:error});
+        if (document) {
+            
+            message.attachments=
+            {
+                filename: req.file.filename,
+                path: req.file.path
+            } 
         } else {
-            res.json({status:true,response:info.response});
-        }
-    }) 
+            message.document = "No documents Attached"
+        } 
 
-})
+
+        transporter.sendMail(message, (error, info) => {
+            if (error) {
+                console.log(error);
+                // handle the error if needed
+            } else {
+
+                console.log(info);
+                // handle the success if needed
+            }
+        });
+
+    } catch (error) {
+        console.log(error);
+         res.json({ status: false, error: error.message });
+   }
+} );
+
+
+
+
+
+
 
 app.listen(PORT, () => {
-    console.log("server started .....")
-})
+    console.log("Server started on port", PORT);
+});

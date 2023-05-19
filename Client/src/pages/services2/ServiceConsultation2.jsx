@@ -2,14 +2,12 @@ import React, { useRef, useState } from 'react'
 import { Navbar2 } from '../../components/navbar2/Navbar2';
 import HeroSection2 from '../../components/herosection2/HeroSection2';
 import { Footer2 } from '../../components/footer2/Footer2';
-import SERVICES from '../../data/services';
+import { SendEnquiry } from '../../Services/api';
 
 const Services2 = () => {
 
-    
-    
     const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
-    
+
     const [formOpen, setformOpen] = useState(false)
     const [successmsg, setsuccessmsg] = useState(false)
 
@@ -24,13 +22,13 @@ const Services2 = () => {
         const formData = new FormData(e.currentTarget);
 
         const data = Object.fromEntries(formData);
-        data.customField = 'Custom Value';
-     
-        console.log("datah",data);
-       // const res = await SendResume(data)
+        formRef.current.reset();   // Reset the form values
+        const res = await SendEnquiry(data)
+        console.log(res);
         setsuccessmsg(true)
-        // Reset the form values
-        formRef.current.reset();
+        setTimeout(() => {
+            setsuccessmsg(false)
+        }, 3000);
     };
 
 
@@ -46,7 +44,7 @@ const Services2 = () => {
                 <Navbar2 />
             </div>
             <div className='container'>
-                <HeroSection2 data={serviceSection2}  displaySearchFilter={displaySearchFilter} />
+                <HeroSection2 data={serviceSection2} displaySearchFilter={displaySearchFilter} />
                 <div className=' pt-4 pb-5 border-top'>
                     <p className='pt-3'>Enter the required service, including your contact details here !</p>
                 </div>
@@ -62,7 +60,7 @@ const Services2 = () => {
                     <form onSubmit={handleSubmit} ref={formRef} className="collapse" id="careeropeningApplyCollapse-formopenclose">
                         <div className='d-flex flex-column gap-4 pt-3'>
                             {/* select service */}
-                            <select className="form-select" name='Selecval' aria-label="Default select example">
+                            <select className="form-select" name='ServiceSelected' aria-label="Default select example">
                                 <option value={"no_service_selected"}>Select Service</option>
                                 <option value="Mobile_App_Development">Mobile App Development</option>
                                 <option value="Web_Application_Development">Web Application Development</option>
@@ -88,7 +86,7 @@ const Services2 = () => {
                             </div>
                             {/* file input */}
 
-                            <input type="file" className="form-control btn btn-primary" id="myFile" name="resume" />
+                            <input type="file" className="form-control btn btn-primary" id="myFile" name="document" />
                         </div>
                         <div className='d-flex gap-5 mt-5 align-items-center'>
                             <button type='submit' className='btn btn-outline-secondary '>Submit</button>

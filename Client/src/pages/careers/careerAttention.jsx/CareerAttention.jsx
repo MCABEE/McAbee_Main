@@ -14,11 +14,14 @@ const CareerAttention = () => {
         const formData = new FormData(e.currentTarget);
 
         const data = Object.fromEntries(formData);
-
+        data.name=""
+        data.address=""
+        data.mobile=""
+        data.email=""
         const res = await SendResume(data)
-        setsuccessmsg(true)
+       setsuccessmsg(true)
         // Reset the form values
-        formRef.current.reset();
+         formRef.current.reset();
         setTimeout(() => {
             setsuccessmsg(false);
           }, 5000);

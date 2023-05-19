@@ -7,6 +7,7 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
     const [formOpen, setformOpen] = useState(false)
     const [toggleJobDesc, settoggleJobDesc] = useState(false)
     const [successmsg, setsuccessmsg] = useState(false)
+    const [submiterror, setsubmiterror] = useState(false)
 
     const formRef = useRef(null);
 
@@ -15,11 +16,21 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
         const formData = new FormData(e.currentTarget);
 
         const data = Object.fromEntries(formData);
+        data.jobtitle = JOBOPENINGS.jobTitle
+        if (data.resume.name === "") {
+            setsubmiterror(true)
+        } else {
+            const res = await SendResume(data)
+            setsuccessmsg(true)
+            formRef.current.reset();
+            setTimeout(() => {
+                setsuccessmsg(false);
+            }, 5000);
+        }
+        //
 
-        const res = await SendResume(data)
-        setsuccessmsg(true)
-        // Reset the form values
-        formRef.current.reset();
+        // // Reset the form values
+
     };
 
     return (
@@ -75,8 +86,12 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
                             {/* email input */}
                             <input type="text" name='email' className="form-control" placeholder="Email-id" />
                             {/* file input */}
-                            <input type="file" className="form-control btn btn-primary" id="myFile" name="resume" />
+                            <input type="file" onChange={()=>setsubmiterror(false)} accept=".pdf" capture="filesystem" className="form-control btn btn-primary" id="myFile" name="resume" />
                         </div>
+                        {
+                            submiterror ? <span className='text-danger'>Please attach your Resume*</span> : ""
+                        }
+
                         <div className='d-flex gap-5 mt-5 align-items-center'>
                             <button type='submit' className='btn btn-outline-secondary '>Submit</button>
                             <div className='text-success'>{successmsg ? "Application has been successfully submited." : ""}</div>
