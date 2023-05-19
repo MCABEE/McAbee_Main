@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Footer2 } from '../../components/footer2/Footer2'
 import { HeroSection } from '../../components/heroSection/HeroSection'
 import { Navbar2 } from '../../components/navbar2/Navbar2'
@@ -7,6 +7,8 @@ import "./home2.scss"
 import ProductCarousel2 from './productCarousel2/ProductCarousel2'
 import PRODUCTS from '../../data/products'
 import { useNavigate, Link } from 'react-router-dom'
+import { useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 
 let herosectionData = {
@@ -19,6 +21,23 @@ let herosectionData = {
 
 const Home2 = () => {
     const navigate = useNavigate()
+
+    const homeanimation1 = useAnimation();
+    const [homeref1, home1inView] = useInView({
+        threshold: 0.2,triggerOnce: true
+      });
+
+      useEffect(() => {
+        if (home1inView) {
+          homeanimation1.start({
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.25, duration: 0.5 },
+          });
+        }else{
+          homeanimation1.start({ opacity: 0, y: -50 });
+        }
+      }, [home1inView]);
     return (
         <div className='careers-page-wrapper pb-3'>
             <HeroSection data={herosectionData} />
