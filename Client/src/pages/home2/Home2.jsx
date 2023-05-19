@@ -39,7 +39,7 @@ const Home2 = () => {
         }
       }, [home1inView]);
     return (
-        <div className='careers-page-wrapper pb-3'>
+        <div className='careers-page-wrapper pb-3' style={{overflowX:"hidden"}}>
             <HeroSection data={herosectionData} />
             <div className="container position-absolute" style={{ top: "1rem", right: "50%", transform: "translateX(50%)" }}>
                 <Navbar2 />
@@ -65,7 +65,7 @@ const Home2 = () => {
                     </div>
                 </div>
                 <div className='d-flex gap-4 pt-5 pb-3 mt-3 flex-column flex-md-row justify-content-between'>
-                    <div className='text-start'>
+                    <div className='text-center text-lg-start'>
                         <h5 className='fw-700'>Mobile App Development</h5>
                         <p>Extensive experience building modern web applications using React Javascript library (including modern features).</p>
                     </div>
@@ -73,7 +73,7 @@ const Home2 = () => {
                         <h5 className='fw-700'>Mobile App Development</h5>
                         <p>Extensive experience building modern web applications using React Javascript library (including modern features).</p>
                     </div>
-                    <div className='text-end'>
+                    <div className='text-center text-lg-end'>
                         <h5 className='fw-700'>Mobile App Development</h5>
                         <p>Extensive experience building modern web applications using React Javascript library (including modern features).</p>
                     </div>
@@ -112,7 +112,7 @@ const Home2 = () => {
                                 <p>Our products creates a foundation for future retail that transcends the boundaries of channels and touchpoints. Our products creates a foundation for future retail that transcends the boundaries of channels and touchpoints.</p>
                             </div>
                         </div>
-                        <div className='col-5 ms-auto col-md-3 col-lg-2 text-end'>
+                        <div className='col-5 homesubmenu  col-md-3 col-lg-2 my-2 text-start text-lg-end '>
                             <p className='border-bottom' style={{cursor:"pointer"}}>Our Story</p>
                             <p className='border-bottom' style={{cursor:"pointer"}}>The Team</p>
                             <p className='border-bottom' style={{cursor:"pointer"}}>Our Principles</p>

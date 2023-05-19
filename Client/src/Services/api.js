@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const BASE_URL = "http://65.2.181.214:5000"
+const BASE_URL = "http://localhost:5000"
 
 export const SendResume = async (resumeData) => {
     try {
