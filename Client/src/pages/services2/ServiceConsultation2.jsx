@@ -9,7 +9,9 @@ const Services2 = () => {
     const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
 
     const [formOpen, setformOpen] = useState(false)
-    const [successmsg, setsuccessmsg] = useState(false)
+    const [showsuccessmsg, setshowsuccessmsg] = useState(false)
+    const [successmsg, setsuccessmsg] = useState(true)
+    const [showProgress, setshowProgress] = useState(false)
 
     const serviceList = ["Mobile App Development", "Web Application Development", "Automation", "Cloud Hosting", "Digital Marketing", "Big Data Analytics"] //sets the list option for herosection2 which is going as object prop 
 
@@ -23,12 +25,20 @@ const Services2 = () => {
 
         const data = Object.fromEntries(formData);
         formRef.current.reset();   // Reset the form values
+        setshowProgress(true)
         const res = await SendEnquiry(data)
-        console.log(res);
-        setsuccessmsg(true)
-        setTimeout(() => {
+        if (res.status === "ok") {
+           setshowProgress(false)
+           setsuccessmsg(true)
+           setshowsuccessmsg(true)
+        }else{
+            setshowProgress(false)
             setsuccessmsg(false)
-        }, 3000);
+            setshowsuccessmsg(true)
+        }
+        setTimeout(() => {
+            setshowsuccessmsg(false)
+        }, 8000);
     };
 
 
@@ -90,7 +100,22 @@ const Services2 = () => {
                         </div>
                         <div className='d-flex gap-5 mt-5 align-items-center'>
                             <button type='submit' className='btn btn-outline-secondary '>Submit</button>
-                            <div className='text-success'>{successmsg ? "Application has been successfully submited." : ""}</div>
+                            {
+                                showProgress
+                                    ? (<div className="spinner-border text-secondary" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                    ) : ""
+                            }
+                            {
+                                showsuccessmsg
+                                    ? (
+                                        successmsg
+                                            ? <span className='text-success'>Enquiry has been successfully submited. We will get back tou you within 24 hrs.</span>
+                                            : <span className='text-danger'>Something went wrong. Please try again.</span>
+                                    )
+                                    : ""
+                            }
                         </div>
                     </form>
                 </div>

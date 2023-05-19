@@ -5,7 +5,10 @@ import { RiShareForward2Fill } from "react-icons/ri"
 import { SendResume } from '../../../Services/api'
 
 const CareerAttention = () => {
-    const [successmsg, setsuccessmsg] = useState(false)
+    const [showsuccessmsg, setshowsuccessmsg] = useState(false)
+    const [successmsg, setsuccessmsg] = useState(true)
+    const [showProgress, setshowProgress] = useState(false)
+    const [submiterror, setsubmiterror] = useState(false)
 
     const formRef = useRef(null);
 
@@ -14,17 +17,31 @@ const CareerAttention = () => {
         const formData = new FormData(e.currentTarget);
 
         const data = Object.fromEntries(formData);
-        data.name=""
-        data.address=""
-        data.mobile=""
-        data.email=""
-        const res = await SendResume(data)
-       setsuccessmsg(true)
-        // Reset the form values
-         formRef.current.reset();
+        if (data.resume.name === "") {
+            setsubmiterror(true)
+        } else {
+            data.name = ""
+            data.address = ""
+            data.mobile = ""
+            data.email = ""
+            data.jobtitle = ""
+            // Reset the form values
+            formRef.current.reset();
+            setshowProgress(true)
+            const res = await SendResume(data)
+            if (res.status === "ok") {
+                setshowProgress(false)
+                setsuccessmsg(true)
+                setshowsuccessmsg(true)
+            } else {
+                setshowProgress(false)
+                setsuccessmsg(false)
+                setshowsuccessmsg(true)
+            }
+        }
         setTimeout(() => {
-            setsuccessmsg(false);
-          }, 5000);
+            setshowsuccessmsg(false)
+        }, 8000);
     };
 
     return (
@@ -35,10 +52,28 @@ const CareerAttention = () => {
                     <br />
                     Otherwise share your cv here, we will let you know, when the suitable vacancy’s available.</p>
                 <form ref={formRef} onSubmit={handleSubmit} className="d-flex flex-column gap-2 justify-content-between align-items-center">
-                    <input type="file" className="form-control btn btn-primary" id="myFile" name="resume" accept=".pdf" capture="filesystem" aria-label="Send your resume" />
-                    <div className='d-flex w-100 justify-content-between align-items-center'> 
+                    <input type="file" onChange={()=>{setsubmiterror(false)}} className="form-control btn btn-primary" id="myFile" name="resume" accept=".pdf" capture="filesystem" aria-label="Send your resume" />
+                    <div className='d-flex w-100 justify-content-between align-items-center'>
                         <button type='submit' className='btn btn-outline-success ' style={{ width: "fit-content" }}>Submit</button>
-                        <p className='m-0 text-success'>{successmsg?" Applied successfully.":""}</p>
+                        {
+                            submiterror ? <span className='text-danger'>Please attach your Resume*</span> : ""
+                        }
+                        {
+                            showProgress
+                                ? (<div className="spinner-border text-secondary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                                ) : ""
+                        }
+                        {
+                            showsuccessmsg
+                                ? (
+                                    successmsg
+                                        ? <span className='text-success'>Application has been Submitted successfully.</span>
+                                        : <span className='text-danger'>Something went wrong. Please try again.</span>
+                                )
+                                : ""
+                        }
                     </div>
                 </form>
             </div>

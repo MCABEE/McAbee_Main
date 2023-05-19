@@ -59,34 +59,32 @@ const upload = configureMulter();
                 },
             }
         }
-
         let mail = MailGenerator.generate(response)
-        console.log("resume", resume.filename);
         let message = {
             from: EMAIL,
             to: "iniyini35@gmail.com", //change the email
-            subject: "Business Enquiry through MCABEE website.",
+            subject: "Job application through MCABEE website",
             html: mail,
-            attachments:
-            {
-                filename: resume.filename,
-                path: req.file.path
-            }
         }
+        if (resume) {
+            message.attachments=
+            {
+                filename: req.file.filename,
+                path: req.file.path
+            } 
+        } 
+
 
         transporter.sendMail(message, (error, info) => {
-            if (error) {
-                console.log(error);
-                // handle the error if needed
+            if (!error) {
+                res.json({status:"ok",data:info})
             } else {
-
-                console.log(info);
-                // handle the success if needed
+                res.json({status:"error",data:"something went wrong",error:error})
+               
             }
         });
 
     } catch (error) {
-        console.log(error);
         res.json({ status: false, error: error.message });
     }
 
@@ -148,24 +146,19 @@ app.post("/SendEnquiry",upload.single("document"),async(req,res)=>{
                 filename: req.file.filename,
                 path: req.file.path
             } 
-        } else {
-            message.document = "No documents Attached"
         } 
 
 
         transporter.sendMail(message, (error, info) => {
-            if (error) {
-                console.log(error);
-                // handle the error if needed
+            if (!error) {
+                res.json({status:"ok",data:info})
             } else {
-
-                console.log(info);
-                // handle the success if needed
+                res.json({status:"error",data:"something went wrong",error:error})
+               
             }
         });
 
     } catch (error) {
-        console.log(error);
          res.json({ status: false, error: error.message });
    }
 } );

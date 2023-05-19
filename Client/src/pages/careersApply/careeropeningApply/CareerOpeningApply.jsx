@@ -6,7 +6,9 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
 
     const [formOpen, setformOpen] = useState(false)
     const [toggleJobDesc, settoggleJobDesc] = useState(false)
-    const [successmsg, setsuccessmsg] = useState(false)
+    const [showsuccessmsg, setshowsuccessmsg] = useState(false)
+    const [successmsg, setsuccessmsg] = useState(true)
+    const [showProgress, setshowProgress] = useState(false)
     const [submiterror, setsubmiterror] = useState(false)
 
     const formRef = useRef(null);
@@ -20,12 +22,21 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
         if (data.resume.name === "") {
             setsubmiterror(true)
         } else {
-            const res = await SendResume(data)
-            setsuccessmsg(true)
             formRef.current.reset();
+            setshowProgress(true)
+            const res = await SendResume(data)
+            if (res.status === "ok") {
+                setshowProgress(false)
+                setsuccessmsg(true)
+                setshowsuccessmsg(true)
+            } else {
+                setshowProgress(false)
+                setsuccessmsg(false)
+                setshowsuccessmsg(true)
+            }
             setTimeout(() => {
-                setsuccessmsg(false);
-            }, 5000);
+                setshowsuccessmsg(false)
+            }, 8000);
         }
         //
 
@@ -86,7 +97,7 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
                             {/* email input */}
                             <input type="text" name='email' className="form-control" placeholder="Email-id" />
                             {/* file input */}
-                            <input type="file" onChange={()=>setsubmiterror(false)} accept=".pdf" capture="filesystem" className="form-control btn btn-primary" id="myFile" name="resume" />
+                            <input type="file" onChange={() => setsubmiterror(false)} accept=".pdf" capture="filesystem" className="form-control btn btn-primary" id="myFile" name="resume" />
                         </div>
                         {
                             submiterror ? <span className='text-danger'>Please attach your Resume*</span> : ""
@@ -94,7 +105,22 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
 
                         <div className='d-flex gap-5 mt-5 align-items-center'>
                             <button type='submit' className='btn btn-outline-secondary '>Submit</button>
-                            <div className='text-success'>{successmsg ? "Application has been successfully submited." : ""}</div>
+                            {
+                                showProgress
+                                    ? (<div className="spinner-border text-secondary" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                    ) : ""
+                            }
+                            {
+                                showsuccessmsg
+                                    ? (
+                                        successmsg
+                                            ? <span className='text-success'>Application has been Submitted successfully.</span>
+                                            : <span className='text-danger'>Something went wrong. Please try again.</span>
+                                    )
+                                    : ""
+                            }
                         </div>
                     </form>
                 </div>
