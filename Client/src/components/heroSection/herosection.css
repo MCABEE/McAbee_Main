@@ -1,0 +1,80 @@
+.hero-section {
+  max-width: 100%;
+  min-height: 100vh;
+  
+  
+}
+.herosecGradientBg{
+  background: linear-gradient(
+    to right,
+    #4a92d5,
+    #9ec880
+  );
+}
+.herosecimgBg{
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+  ),
+  url("../../assets/banner_Image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.hero-section .heroTitle {
+  font-size: 3em;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+}
+.hero-section .herocontent {
+  letter-spacing: 0.05em;
+  font-size: large;
+  max-width: 450px ;
+}
+.hero-section-content {
+  position: absolute;
+  top: 55%;
+  padding-left: 9rem;
+  transform: translateY( -50%);
+
+
+}
+.GoogleMapIconContainer {
+  padding-left: 10em;
+}
+.heroSectionbtn {
+  background-color: #ffffff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  color: #303030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heroSectionbtn:hover {
+  cursor: pointer;
+  background-color: #fff ;
+  color: gray !important;
+}
+
+@media (max-width: 768px) {
+  .hero-section-content {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section-content {
+    left: 0%;
+    transform: translateY(-50%);
+    padding-left: 0;
+    padding: 25px;
+  }
+  .hero-section h3 {
+    max-width: 80%;
+  }
+  .GoogleMapIconContainer {
+    display: none;
+  }
+}
