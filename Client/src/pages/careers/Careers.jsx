@@ -16,9 +16,9 @@ import JOBOPENINGS from '../../data/jobOpenings'
 export const Careers = () => {
 
   const [filterOpening, setfilterOpening] = useState("All")   //changes the selection menu in the herosection 2
-  const [displaySelectMenu, setdisplaySelectMenu] = useState(false)
+  const [displaySelectMenu, setdisplaySelectMenu] = useState(true)
   const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
-  const [renderCareerPage, setrenderCareerPage] = useState(true) //tell which component to render (job openings or job apply component)
+  const [renderCareerPage, setrenderCareerPage] = useState(false) //tell which component to render (job openings or job apply component)
 
   const careerList = JOBOPENINGS.map((OPENING) => OPENING.jobTitle)  //sets the list option for herosection2 which is going as object prop 
 
