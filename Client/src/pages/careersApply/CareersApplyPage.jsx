@@ -27,15 +27,15 @@ export const CareersApplyPage = () => {
 
     const careerList = JOBOPENINGS.map((OPENING) => OPENING.jobTitle)  //sets the list option for herosection2 which is going as object prop 
 
-    useEffect(() => {
-        const FilterParams = JOBOPENINGS.filter((OPENING) => jobtitle === OPENING.params)
-        setfilterOpening(FilterParams[0].jobTitle)
-    }, [])
-
+    
     useEffect(() => {
         setSelectedOpening(JOBOPENINGS.filter((OPENING) => filterOpening === OPENING.jobTitle)[0])
     }, [filterOpening])
-
+    
+    useEffect(() => {
+        const FilterParams = JOBOPENINGS.filter((OPENING) => jobtitle === OPENING.params)
+        setfilterOpening(FilterParams.jobTitle)
+    }, [])
     const heroSection2 = {
         "title": "CAREER",
         "tagline": "Discover Your New Career",
