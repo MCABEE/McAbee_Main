@@ -12,7 +12,7 @@ export const HeroSection = ({ data }) => {
   const navigate = useNavigate()
 
   const handleLetsTalk=()=>{
-    navigate("/services/serviceconsultation")
+    navigate("/services")
   }
 
   return (
@@ -31,7 +31,7 @@ export const HeroSection = ({ data }) => {
         <motion.p
           initial={{ opacity: 0, y: "-100vh" }}
           animate={{ opacity: 1, y: 1 }}
-          transition={{delay:0.5,duration:1        }} className='heroTitle'>
+          transition={{delay:0.5,duration:1}} className='heroTitle'>
             {topic}
             </motion.p>
         <motion.p initial={{ opacity: 0, y: "55px" }}
@@ -41,7 +41,7 @@ export const HeroSection = ({ data }) => {
           button && <motion.div initial={{ opacity: 0, x: "25px" }}
           animate={{ opacity: 1, x: 1 }}
           transition={{delay:4.5,duration:1}} className='d-flex  align-items-center' >
-           Let's Talk <a href="#" className='text-dark heroSectionbtn ms-4' onClick={handleLetsTalk} ><BsArrowRight size={20}/></a>
+           Let's Talk <a href="#" className='text-dark heroSectionbtn ms-4' onClick={handleLetsTalk}><BsArrowRight size={20}/></a>
             </motion.div>
         }
 

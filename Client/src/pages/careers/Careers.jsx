@@ -16,7 +16,7 @@ import JOBOPENINGS from '../../data/jobOpenings'
 export const Careers = () => {
 
   const [filterOpening, setfilterOpening] = useState("All")   //changes the selection menu in the herosection 2
-  const [displaySelectMenu, setdisplaySelectMenu] = useState(true)
+  const [displaySelectMenu, setdisplaySelectMenu] = useState(false)
   const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
   const [renderCareerPage, setrenderCareerPage] = useState(true) //tell which component to render (job openings or job apply component)
 
@@ -47,7 +47,9 @@ export const Careers = () => {
             ? <CareerOpenings JOBOPENINGS={JOBOPENINGS} />
             : <CareerOpenings JOBOPENINGS={SelectedOpening} />
         }
+
         <CareerAttention />
+
 
 
 

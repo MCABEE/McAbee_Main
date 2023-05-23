@@ -1,10 +1,17 @@
 .herosec2Select{
     width: fit-content;
 }
-
+.herosec2Select{
+    width: 18rem;
+}
+.herosec2Search{
+    width: 18rem;
+}
 @media (max-width: 768px) {
     .herosec2Select{
-        width: 40%;
-        font-size: 0.6rem;
+        width: 100%;
+    }
+    .herosec2Search{
+        width: 100%;
     }
   }

@@ -21,7 +21,7 @@ export const CareersApplyPage = () => {
 
     const [filterOpening, setfilterOpening] = useState("All")   //changes the selection menu in the herosection 2
     const [SelectedOpening, setSelectedOpening] = useState()
-    const [displaySelectMenu, setdisplaySelectMenu] = useState(true)
+    const [displaySelectMenu, setdisplaySelectMenu] = useState(false)
     const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
     const [renderCareerPage, setrenderCareerPage] = useState(false) //tell which component to render (job openings or job apply component)
 
@@ -53,7 +53,7 @@ export const CareersApplyPage = () => {
             <div className='container'>
                 <HeroSection2 data={heroSection2} filter={filterOpening} setfilter={setfilterOpening} diplayListOption={renderCareerPage} displaySelectMenu={displaySelectMenu} displaySearchFilter={displaySearchFilter} />
                 <div className=' pt-2 pb-2 border-top border-bottom '>
-                    <Link to="/careers" className='text-dark' style={{ cursor: 'pointer' }}><BsArrowLeft size={25} /><span className='ps-3'>Back to Products</span>
+                    <Link to="/careers" className='text-dark' style={{ cursor: 'pointer' }}><BsArrowLeft size={25} /><span className='ps-3'>Back to Careers</span>
                     </Link>
 
                 </div>

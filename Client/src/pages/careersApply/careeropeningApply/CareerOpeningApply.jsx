@@ -1,8 +1,23 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { SendResume } from '../../../Services/api';
+import { RiShareForward2Fill } from "react-icons/ri"
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 
 const CareerOpeningApply = ({ JOBOPENINGS }) => {
+
+    //animate
+    const CareerOpeningApplyAnimation1 = useAnimation();
+
+    const [CareerOpeningApplyref1, CareerOpeningApplyinView1] = useInView({ threshold: 0.1, triggerOnce: true });
+
+    useEffect(() => {
+        if (CareerOpeningApplyinView1) { CareerOpeningApplyAnimation1.start({ opacity: 1, y: 0, transition: { delay: 0.75, duration: 1 } }); }
+        if (!CareerOpeningApplyinView1) { CareerOpeningApplyAnimation1.start({ opacity: 0, y: -75 }); }
+    }, [CareerOpeningApplyinView1]);
+
+    //
 
     const [formOpen, setformOpen] = useState(false)
     const [toggleJobDesc, settoggleJobDesc] = useState(false)
@@ -10,8 +25,14 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
     const [successmsg, setsuccessmsg] = useState(true)
     const [showProgress, setshowProgress] = useState(false)
     const [submiterror, setsubmiterror] = useState(false)
-
+    const [selectedFile, setselectedFile] = useState(null)
     const formRef = useRef(null);
+
+    const handleFileinputChange = (e) => {
+        e.preventDefault()
+        setsubmiterror(false)
+        setselectedFile(e.target.files[0])
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -19,6 +40,7 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
 
         const data = Object.fromEntries(formData);
         data.jobtitle = JOBOPENINGS.jobTitle
+        setselectedFile(null)
         if (data.resume.name === "") {
             setsubmiterror(true)
         } else {
@@ -46,10 +68,7 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
 
     return (
         <>
-            {
-
-            }
-            <div className='pt-4 pb-5'>
+            <motion.div ref={CareerOpeningApplyref1} animate={CareerOpeningApplyAnimation1} className='pt-4 pb-5'>
                 <h6 className='fw-700'>{JOBOPENINGS.jobTitle}</h6>
                 <p className='mb-2 fw-bold ' style={{ fontSize: "0.9rem" }}>{JOBOPENINGS.experience}yr experience <span className='text-muted'>|</span> {JOBOPENINGS.noOfOpenings} Opening</p>
                 <p className='m-0 pb-2'>{JOBOPENINGS.shortDesc}</p>
@@ -97,7 +116,16 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
                             {/* email input */}
                             <input type="text" name='email' className="form-control" placeholder="Email-id" />
                             {/* file input */}
-                            <input type="file" onChange={() => setsubmiterror(false)} accept=".pdf" capture="filesystem" className="form-control btn btn-primary" id="myFile" name="resume" />
+                            <div >
+                                <div className="btn btn-primary btn-file">
+                                    <RiShareForward2Fill size={30} />
+                                    <span> Upload CV</span>
+                                    <input type="file" onChange={handleFileinputChange} name="resume" accept=".pdf" capture="filesystem" />
+                                </div>
+                                {
+                                    selectedFile ? <span className='ps-4'>{selectedFile.name}</span> : ""
+                                }
+                            </div>
                         </div>
                         {
                             submiterror ? <span className='text-danger'>Please attach your Resume*</span> : ""
@@ -125,7 +153,7 @@ const CareerOpeningApply = ({ JOBOPENINGS }) => {
                     </form>
                 </div>
 
-            </div>
+            </motion.div>
         </>
 
     )

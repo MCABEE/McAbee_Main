@@ -26,6 +26,8 @@ app.get("/",(req,res)=>{
 })
 
  app.post("/SendResume", upload.single("resume"), async (req, res) => {
+    console.log(req.body);
+    console.log(req.file);
     try {
         const { name, mobile, address, email, jobtitle } = req.body;
         const resume = req.file;
@@ -66,7 +68,7 @@ app.get("/",(req,res)=>{
         let mail = MailGenerator.generate(response)
         let message = {
             from: EMAIL,
-            to: "iniyini35@gmail.com", //change the email
+            to: "mail@mcabee.in", //change the email
             subject: "Job application through MCABEE website",
             html: mail,
         }
@@ -138,7 +140,7 @@ app.post("/SendEnquiry",upload.single("document"),async(req,res)=>{
 
         let message = {
             from: EMAIL,
-            to: "iniyini35@gmail.com", //change the email
+            to: "mail@mcabee.in", //change the email
             subject: "Business Enquiry through MCABEE website.",
             html: mail,
             

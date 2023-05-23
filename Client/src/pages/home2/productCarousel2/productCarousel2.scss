@@ -7,11 +7,11 @@
   }
   .carousel-control-prev {
     top: 50%;
-    transform: translate(-2.5rem, -50%);
+    transform: translate(-3.5rem, -50%);
   }
   .carousel-control-next {
     top: 50%;
-    transform: translate(2.5rem, -50%);
+    transform: translate(3.5rem, -50%);
   }
   .pc-bs-apple,
   .pc-googleplay {
@@ -28,7 +28,17 @@
   .productCarousel2 {
     .carousel-control-prev,
     .carousel-control-next {
-      display: none;
+      width: 50%;
+    height: 100%;
+    border-radius: 0;
+    opacity: 0;
+    }
+    .carousel-control-prev{
+      transform: translate(-0.5rem, -50%);
+    }
+    .carousel-control-next {
+      top: 50%;
+      transform: translate(0.5rem, -50%);
     }
   }
 }

@@ -31,20 +31,20 @@ export const Home = () => {
   const homeanimation3 = useAnimation();
 
 
-  const [homeref1, home1inView] = useInView({
+  const [homeref1, homeinView1] = useInView({
     threshold: 0.2, triggerOnce: true
   });
 
-  const [homeref2, home2inView] = useInView({
+  const [homeref2, homeinView2] = useInView({
     threshold: 0.2, triggerOnce: true
   });
-  const [homeref3, home3inView] = useInView({
+  const [homeref3, homeinView3] = useInView({
     threshold: 0.2, triggerOnce: true
   });
 
 
   useEffect(() => {
-    if (home1inView) {
+    if (homeinView1) {
       homeanimation1.start({
         opacity: 1,
         y: 0,
@@ -53,33 +53,33 @@ export const Home = () => {
     } else {
       homeanimation1.start({ opacity: 0, y: -50 });
     }
-  }, [home1inView]);
+  }, [homeinView1]);
 
   useEffect(() => {
-    if (home2inView) {
+    if (homeinView2) {
       homeanimation2.start({
         opacity: 1,
         y: 0,
         transition: { delay: 0.25, duration: 0.25 },
       });
     }
-    if (!home2inView) {
+    if (!homeinView2) {
       homeanimation2.start({ opacity: 0, y: -50 });
     }
-  }, [home2inView]);
+  }, [homeinView2]);
 
   useEffect(() => {
-    if (home3inView) {
+    if (homeinView3) {
       homeanimation3.start({
         opacity: 1,
         y: 0, scale: 1,
         transition: { delay: 1, duration: 0.2, type: spring },
       });
     }
-    if (!home3inView) {
+    if (!homeinView3) {
       homeanimation3.start({ opacity: 0, y: -100, scale: 0.75 });
     }
-  }, [home3inView]);
+  }, [homeinView3]);
 
 
 
