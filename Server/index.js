@@ -33,7 +33,7 @@ app.get("/",(req,res)=>{
             service: 'gmail',
             auth: {
                 user: EMAIL,
-                pass: PASSWORD
+                pass: PASSWORD1
             }
         }
         let transporter = nodemailer.createTransport(config);
