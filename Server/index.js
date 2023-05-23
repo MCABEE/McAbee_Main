@@ -27,15 +27,6 @@ app.get("/",(req,res)=>{
  app.post("/SendResume", upload.single("resume"), async (req, res) => {
     
     try {
-        const { ServiceSelected, name, company_name, mobile,clientRequirement } = req.body;
-        const document=req.file;
-        let config = {
-            service: 'gmail',
-            auth: {
-                user: EMAIL,
-                pass: PASSWORD1
-            }
-        }
         let transporter = nodemailer.createTransport(config);
 
         let MailGenerator = new Mailgen({
@@ -45,6 +36,16 @@ app.get("/",(req,res)=>{
                 link: 'https://mailgen.js/'
             }
         })
+        const { ServiceSelected, name, company_name, mobile,clientRequirement } = req.body;
+        const document=req.file;
+        let config = {
+            service: 'gmail',
+            auth: {
+                user: EMAIL1,
+                pass: PASSWORD1
+            }
+        }
+        
         let response = {
             body: {
                 name: `${ServiceSelected} Enquiry From ${name}`,
