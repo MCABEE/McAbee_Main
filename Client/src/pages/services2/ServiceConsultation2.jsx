@@ -11,6 +11,13 @@ const Services2 = () => {
 
     //animate
     const serviceConsultation2Animation1 = useAnimation();
+    const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
+
+    const [formOpen, setFormOpen] = useState(false)
+    const [showsuccessmsg, setShowsuccessmsg] = useState(false)
+    const [successmsg, setsuccessmsg] = useState(true)
+    const [showProgress, setshowProgress] = useState(false)
+    const [selectedFile, setselectedFile] = useState(null)
 
     const [serviceConsultation2ref1, serviceConsultation2inView1] = useInView({ threshold: 0.1, triggerOnce: true });
 
@@ -20,17 +27,10 @@ const Services2 = () => {
     }, [serviceConsultation2inView1]);
     //animation completes here
 
-    const [displaySearchFilter, setdisplaySearchFilter] = useState(true)
-
-    const [formOpen, setformOpen] = useState(false)
-    const [showsuccessmsg, setshowsuccessmsg] = useState(false)
-    const [successmsg, setsuccessmsg] = useState(true)
-    const [showProgress, setshowProgress] = useState(false)
-    const [selectedFile, setselectedFile] = useState(null)
 
     const serviceList = ["Mobile App Development", "Web Application Development", "Automation", "Cloud Hosting", "Digital Marketing", "Big Data Analytics"] //sets the list option for herosection2 which is going as object prop 
 
-    //const SelectedProduct = PRODUCTS.filter((PRODUCT) => filterProduct === PRODUCT.productName) //filters the job which the user select through a select list in herosection2
+    const SelectedProduct = PRODUCTS.filter((PRODUCT) => filterProduct === PRODUCT.productName) //filters the job which the user select through a select list in herosection2
 
     const handleFileinputChange = (e) => {
         e.preventDefault()
@@ -38,6 +38,14 @@ const Services2 = () => {
     }
 
 
+    
+    
+    const serviceSection2 = {
+        "title": "SERVICES",
+        "tagline": "Future makes simple, through Technology",
+        "shortDesc1": "Mcabee needs more creative people and technologists. Search open roles for designers, developers, analysts and more. Mcabee careers start right here - including yours. Kickstart your journey today.",
+        "List": serviceList,
+    }
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
@@ -60,14 +68,6 @@ const Services2 = () => {
             setshowsuccessmsg(false)
         }, 8000);
     };
-
-
-    const serviceSection2 = {
-        "title": "SERVICES",
-        "tagline": "Future makes simple, through Technology",
-        "shortDesc1": "Mcabee needs more creative people and technologists. Search open roles for designers, developers, analysts and more. Mcabee careers start right here - including yours. Kickstart your journey today.",
-        "List": serviceList,
-    }
     return (
         <div className='careers-page-wrapper pb-3'>
             <div className='container pt-3'>
